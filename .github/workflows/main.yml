@@ -26,3 +26,7 @@ jobs:
           tags: | 
             ldamasio/cro-frontend-prod:0.0.${{github.run_number}}
             ldamasio/cro-frontend-prod:latest
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+          ACTIONS_STEP_DEBUG: true
+
