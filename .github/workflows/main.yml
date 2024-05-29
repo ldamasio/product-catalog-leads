@@ -26,4 +26,3 @@ jobs:
           tags: | 
             ldamasio/cro-frontend-prod:0.0.${{github.run_number}}
             ldamasio/cro-frontend-prod:latest
-
