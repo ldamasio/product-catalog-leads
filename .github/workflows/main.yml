@@ -1,0 +1,29 @@
+name: Cromo Production CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.1.1
+
+      - name: Docker Login
+        uses: docker/login-action@v3.0.0
+        with:
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{secrets.DOCKERHUB_PWD}}
+
+      - name: Build and push Docker frontend image
+        uses: docker/build-push-action@v5.0.0
+        with: 
+          context: ./cromo
+          file: ./cromo/docker/Dockerfile
+          push: true
+          tags: | 
+            ldamasio/cro-frontend-prod:0.0.${{github.run_number}}
+            ldamasio/cro-frontend-prod:latest
+
