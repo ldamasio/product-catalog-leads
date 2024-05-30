@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div class="m-8 p-8">
+        <div className="m-8 p-8">
           <div className="grid grid-cols-3 gap-4">
             {productsData.map((product) => (
               <ProductCard key={product.id} product={product} />
