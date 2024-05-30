@@ -1,7 +1,12 @@
 import React from 'react';
 
 interface Product {
-    name: string;
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
 }
 
 const ProductCard: React.FC<Product> = ({ product }) => {
