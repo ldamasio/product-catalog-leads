@@ -2,7 +2,7 @@ FROM node:alpine
 WORKDIR /app
 COPY ../package.json ./
 RUN cat ./package.json
-RUN npm install --production
+RUN npm install
 COPY ../. .
 RUN npm run build
 EXPOSE 3000
