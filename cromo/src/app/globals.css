@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+main{
+  min-height: 80vh;
+}
+
+
