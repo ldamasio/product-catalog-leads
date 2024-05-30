@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ProductCard = ({ product }) => {
+interface Product {
+    name: string;
+}
+
+const ProductCard: React.FC<Product> = ({ product }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <h2 className="text-xl font-semibold">{product.name}</h2>
