@@ -4,7 +4,7 @@
         "name": "Produto 1",
         "description": "Descrição do produto 1",
         "price": 20.00,
-        "image": "produto1.jpg",
+        "image": "p1.png",
         "category": "category 1"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Produto 2",
         "description": "Descrição do produto 2",
         "price": 20.00,
-        "image": "produto1.jpg",
+        "image": "p2.jpg",
         "category": "category 1"
     },
     {
@@ -20,7 +20,7 @@
         "name": "Produto 3",
         "description": "Descrição do produto 3",
         "price": 20.00,
-        "image": "produto1.jpg",
+        "image": "p3.jpg",
         "category": "category 1"
     }
 ]
