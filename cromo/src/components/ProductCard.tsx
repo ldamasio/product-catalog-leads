@@ -9,7 +9,11 @@ interface Product {
   category: string;
 }
 
-const ProductCard: React.FC<Product> = ({ product }) => {
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4">
       <h2 className="text-xl font-semibold">{product.name}</h2>
