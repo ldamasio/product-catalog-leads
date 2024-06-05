@@ -6,7 +6,7 @@ import Caminhao from "@/components/Caminhao";
 import Carro from "@/components/Carro";
 import Produtos from "@/components/Produtos";
 import Banner from "@/components/Banner";
-import Volks from "@/components/Volks";
+// import Volks from "@/components/Volks";
 import Footer from '../components/Footer';
 
 export default function Home() {
