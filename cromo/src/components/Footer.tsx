@@ -11,8 +11,8 @@ const Footer = () => {
         <p>
           Rua Vinte e Quatro de Maio, 188.
           Andar 5.
-          Bairro: Centro.
-          CEP: 01041-903.
+          Centro.
+          01041-903.
           São Paulo, SP.
         </p>
       </div>

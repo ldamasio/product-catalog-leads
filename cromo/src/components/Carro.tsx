@@ -28,7 +28,7 @@ const Carro: React.FC<CarroProps> = ({ }) => {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <img
-              src="/carro.png"
+              src="/hb20.jpg"
               alt="Carro"
               width="100%"
             />

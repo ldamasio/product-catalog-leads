@@ -28,7 +28,7 @@ const Caminhao: React.FC<CaminhaoProps> = ({ }) => {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <img
-              src="/caminhao-laranja.png"
+              src="/scania.png"
               alt="Caminhão"
               width="100%"
             />
