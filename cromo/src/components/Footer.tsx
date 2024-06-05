@@ -7,6 +7,12 @@ const Footer = () => {
         
       <p className='footer-direitos'>Todos os direitos reservados.</p>
 
+      <div>
+        Contatos
+      </div>
+      <div>
+        0800-
+      </div>
       <div className="footer-local">
         <p>
           Rua Vinte e Quatro de Maio, 188.
@@ -15,10 +21,6 @@ const Footer = () => {
           01041-903.
           São Paulo, SP.
         </p>
-      </div>
-
-      <div>
-        
       </div>
 
     </footer>
