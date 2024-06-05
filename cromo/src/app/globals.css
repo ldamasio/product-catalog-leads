@@ -45,4 +45,43 @@ main{
   .ProductCard {
     width: 100%;
   }
+
 }
+
+.logo {
+  position: relative;
+  top: 0;
+}
+
+.cromo-blue {
+  background-color: #3eb1be;
+}
+
+.menu-background {
+  background-color: black;
+}
+
+.footer-cromo {
+  margin-top: 12px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.footer-direitos {
+  margin-top: 12px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.footer-local {
+  margin-top: 12px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.footer-contatos {
+  margin-top: 12px;
+  width: 100%;
+  font-size: 15px;
+}
+
