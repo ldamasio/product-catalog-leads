@@ -23,6 +23,10 @@ const Footer = () => {
         <p className="pt-3" >
           <FontAwesomeIcon icon={faPhone} className="photo-icone"/>0800 591 8723
         </p>
+
+        <p className="pt-3" >
+          <FontAwesomeIcon icon={faPhone} className="photo-icone"/>(11) 915691402
+        </p>
       </div>
 
     </footer>
