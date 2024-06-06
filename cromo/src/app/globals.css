@@ -17,13 +17,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white;
+  background: black;
 }
 
 @layer utilities {
@@ -61,6 +56,12 @@ main{
   background-color: black;
 }
 
+.footer {
+  margin-top:300px;
+  padding-bottom:40px;
+  padding-left: 30px;
+}
+
 .footer-cromo {
   margin-top: 12px;
   width: 100%;
@@ -85,3 +86,9 @@ main{
   font-size: 15px;
 }
 
+.photo-icone {
+  width:16px;
+  color: green;
+  float: left;
+  margin-right: 12px;
+}
