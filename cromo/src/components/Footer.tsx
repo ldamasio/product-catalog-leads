@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer container mx-auto flex justify-center">
 
       <div>
-        <p className='footer-cromo'>&copy; 2024 Cromo Financiamentos.</p>
+        <p className='footer-cromo whitespace-nowrap'>&copy; 2024 Cromo Financiamentos.</p>
         <p className='footer-direitos'>Todos os direitos reservados.</p>
       </div>
 
