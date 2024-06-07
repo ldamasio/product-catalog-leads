@@ -4,28 +4,23 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
-    <footer className="footer container mx-auto flex justify-center">
+    <footer className="footer">
 
-      <div>
+      <div className="footer-direitos">
         <p className='footer-cromo whitespace-nowrap'>&copy; 2024 Cromo Financiamentos.</p>
         <p className='footer-direitos'>Todos os direitos reservados.</p>
       </div>
 
-      <div className="footer-local">
-        <p>
+      <div className="footer-contatos">
+        <p className="pt-3" >
+          <FontAwesomeIcon icon={faPhone} className="photo-icone"/>0800 591 8723
+        </p>
+        <p className="footer-local">
           Rua Vinte e Quatro de Maio, 188.
           Andar 5.
           Centro.
           01041-903.
           São Paulo, SP.
-        </p>
-
-        <p className="pt-3" >
-          <FontAwesomeIcon icon={faPhone} className="photo-icone"/>0800 591 8723
-        </p>
-
-        <p className="pt-3" >
-          <FontAwesomeIcon icon={faPhone} className="photo-icone"/>(11) 915691402
         </p>
       </div>
 

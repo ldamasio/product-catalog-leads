@@ -57,6 +57,7 @@ main{
 }
 
 .footer {
+  width: 100%;
   margin-top:300px;
   padding-bottom:40px;
   padding-left: 30px;
@@ -69,22 +70,23 @@ main{
 }
 
 .footer-direitos {
-  margin-top: 12px;
   width: 100%;
   font-size: 15px;
+  margin-top: 12px;
 }
 
 .footer-local {
-  margin-left: 36px;
-  margin-top: 12px;
   width: 100%;
+  margin-top: 24px;
+  margin-left: 0px;
   font-size: 15px;
 }
 
 .footer-contatos {
-  margin-top: 12px;
   width: 100%;
   font-size: 15px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .photo-icone {

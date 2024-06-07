@@ -18,7 +18,7 @@ export default function Nabbar() {
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Cromo Financiamentos</span>
               <Logo />
             </a>
           </div>
@@ -40,7 +40,7 @@ export default function Nabbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="#" className="text-sm font-semibold leading-6 text-gray-300">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
