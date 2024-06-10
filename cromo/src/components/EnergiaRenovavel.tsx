@@ -36,7 +36,7 @@ const EnergiaRenovavel: React.FC<EnergiaRenovavelProps> = ({ }) => {
               Financiar Energia Renovável
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              O futuro é sustentabilidade. Com o crédito energia renovável, você ajuda o maio ambiente e as gerações futuras.
+              O futuro é sustentabilidade. Com o crédito energia renovável, você ajuda o meio ambiente e as gerações futuras.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a

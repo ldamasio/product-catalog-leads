@@ -5,7 +5,7 @@ const Logo = () => {
     <img 
         src="/logo-transparent-background.png" 
         alt="Cromos Financiamentos"
-        style={{ maxHeight: '86px', width: 'auto' }}
+        style={{ maxHeight: '120px', width: 'auto' }}
     />
   );
 };
