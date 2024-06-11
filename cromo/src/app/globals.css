@@ -36,11 +36,9 @@ main{
     display: flex;
     flex-direction: column;
   }
-
   .ProductCard {
     width: 100%;
   }
-
 }
 
 .logo {
@@ -94,4 +92,91 @@ main{
   color: green;
   float: left;
   margin-right: 12px;
+}
+
+.sectionContainer {
+  display: relative;
+  max-width: 1140px;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.sectionImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionImage img {
+  max-width: 500px;
+  min-width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+.sectionText {
+  flex: 1;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.sectionDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 24px;
+  margin-left: 12px;
+}
+
+.sectionActions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionFinancingButton {
+  width: 24em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  background-color: #3eb1be;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sectionFinancingButton:hover {
+  background-color: #0056b3;
+}
+
+.sectionSaibaMaisLink {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.sectionSaibaMaisLink:hover {
+  color: #007bff;
 }
