@@ -115,6 +115,7 @@ main{
   float: left;
   width: fit-content;
   margin-right: 12px;
+  margin-bottom: 12px;
   font-size: 0.8em;
   background-color: #3eb1be;
   color: #fff;
@@ -129,7 +130,6 @@ main{
 .sectionFinancingButton:hover {
   background-color: #0056b3;
 }
-
 
 .sectionSaibaMaisLink {
   float: left;
