@@ -13,7 +13,7 @@ const Footer = () => {
 
       <div className="footer-contatos">
         <p className="pt-3" >
-          <FontAwesomeIcon icon={faPhone} className="photo-icone"/>0800 591 8723
+          <FontAwesomeIcon icon={faPhone} className="footer-photo-icone"/>0800 591 8723
         </p>
         <p className="footer-local">
           Rua Vinte e Quatro de Maio, 188.

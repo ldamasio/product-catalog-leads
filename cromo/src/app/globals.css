@@ -54,46 +54,6 @@ main{
   background-color: black;
 }
 
-.footer {
-  width: 100%;
-  margin-top:300px;
-  padding-bottom:20px;
-  padding-left: 30px;
-}
-
-.footer-cromo {
-  width: 100%;
-  margin-top: 12px;
-  font-size: 16px;
-}
-
-.footer-direitos {
-  width: 100%;
-  font-size: 15px;
-  margin-top: 12px;
-}
-
-.footer-local {
-  width: 100%;
-  margin-top: 24px;
-  margin-left: 0px;
-  font-size: 15px;
-}
-
-.footer-contatos {
-  width: 100%;
-  font-size: 15px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.photo-icone {
-  width:16px;
-  color: green;
-  float: left;
-  margin-right: 12px;
-}
-
 .sectionContainer {
   display: table;
   width: 100%;
@@ -183,4 +143,45 @@ main{
 
 .sectionSaibaMaisLink:hover {
   color: #007bff;
+}
+
+.footer {
+  width: 100%;
+  color: #666;
+  margin-top:300px;
+  padding-bottom:20px;
+  padding-left: 30px;
+}
+
+.footer-cromo {
+  width: 100%;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.footer-direitos {
+  width: 100%;
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+.footer-local {
+  width: 100%;
+  margin-top: 24px;
+  margin-left: 0px;
+  font-size: 15px;
+}
+
+.footer-contatos {
+  width: 100%;
+  font-size: 15px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.footer-photo-icone {
+  width:16px;
+  color: green;
+  float: left;
+  margin-right: 12px;
 }
