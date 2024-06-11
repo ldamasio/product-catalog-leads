@@ -57,13 +57,13 @@ main{
 .footer {
   width: 100%;
   margin-top:300px;
-  padding-bottom:40px;
+  padding-bottom:20px;
   padding-left: 30px;
 }
 
 .footer-cromo {
-  margin-top: 12px;
   width: 100%;
+  margin-top: 12px;
   font-size: 16px;
 }
 
@@ -95,36 +95,38 @@ main{
 }
 
 .sectionContainer {
-  display: relative;
-  max-width: 1140px;
+  display: table;
+  width: 100%;
   margin-bottom: 50px;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
 }
 
 .sectionContent {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
+  width: 100%;
+  display: table;
+  padding: 0;
 }
 
 .sectionImage {
-  flex: 1;
-  display: flex;
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  height: auto;
   justify-content: center;
   align-items: center;
 }
 
 .sectionImage img {
   max-width: 500px;
-  min-width: 200px;
+  min-width: 120px;
   height: auto;
   object-fit: cover;
 }
 
 .sectionText {
-  flex: 1;
+  display: table-cell;
+  width: 100%;
+  padding: 1em;
+  float: left;
   text-align: left;
 }
 
@@ -140,27 +142,25 @@ main{
   line-height: 1.6;
   color: #666;
   margin-bottom: 24px;
-  margin-left: 12px;
 }
 
 .sectionActions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .sectionFinancingButton {
-  width: 24em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  float: left;
+  width: fit-content;
   margin-right: 12px;
+  font-size: 0.8em;
   background-color: #3eb1be;
   color: #fff;
   padding: 0.5em 1em;
   border: none;
   border-radius: 4px;
-  font-size: 1em;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -170,10 +170,14 @@ main{
   background-color: #0056b3;
 }
 
+
 .sectionSaibaMaisLink {
+  float: left;
+  margin-top: 5px;
+  white-space: nowrap;
   color: #333;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 0.8em;
   transition: color 0.3s ease;
 }
 
