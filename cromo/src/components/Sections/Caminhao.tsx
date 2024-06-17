@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Section from './Section';
+import Section from '../Section';
 
 interface CaminhaoProps {
 }

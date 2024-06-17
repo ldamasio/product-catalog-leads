@@ -4,9 +4,9 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Quem Somos', href: '#' },
-  { name: 'Financiamentos', href: '#' },
-  { name: 'Contatos', href: '#' },
+  { name: 'Quem Somos', href: 'quemsomos' },
+  { name: 'Financiamentos', href: 'financiamentos' },
+  { name: 'Contatos', href: 'contatos' },
 ]
 
 export default function Nabbar() {
@@ -17,7 +17,7 @@ export default function Nabbar() {
       <header className="relative inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Cromo Financiamentos</span>
               <Logo />
             </a>
@@ -40,7 +40,7 @@ export default function Nabbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-300">
+            <a href="login" className="text-sm font-semibold leading-6 text-gray-300">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -81,7 +81,7 @@ export default function Nabbar() {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300 hover:bg-gray-900"
                   >
                     Log in
