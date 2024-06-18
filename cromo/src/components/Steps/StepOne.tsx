@@ -1,31 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-let state = {
-  firstName: '',
-  lastName: ''
-}
-let firstNameIsInvalid = true
-
-const setFirstName = s => {
-  state.firstName = s
-  firstNameIsInvalid = state.firstName.length === 0
-}
-const setLastName = s => state.lastName = s
-
-export const StepOne = (props) => {
-
-  const validateFirstName = (val) => {
-    let prevFirstName = state.firstName
-    setFirstName(val)
-  }
-
-  const validateLastName = (val) => {
-    setLastName(val)
-  }
-
-  const Required = () =>
-    firstNameIsInvalid ? <span style={{ fontSize: '1rem', color: 'red' }}>&nbsp;[ Required ]</span> : ''
-
+const StepOne: React.FC = () => {
   return (
     <div className='formulario'>
       <h1>Passo 1: Seu Perfil</h1>
@@ -37,8 +12,7 @@ export const StepOne = (props) => {
               className='u-full-width'
               placeholder='Nome Completo'
               type='text'
-              onChange={e => validateFirstName(e.target.value)}
-              value={state.firstName}
+              // value={state.firstName}
               autoFocus
               required
             />
@@ -52,8 +26,7 @@ export const StepOne = (props) => {
               className='u-full-width'
               placeholder='Email'
               type='text'
-              onChange={e => validateFirstName(e.target.value)}
-              value={state.firstName}
+              // value={state.firstName}
               autoFocus
               required
             />
