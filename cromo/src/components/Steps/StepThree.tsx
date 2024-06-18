@@ -1,7 +1,6 @@
 import React from 'react';
 
-const StepThree: React.FC = ({ data }) => {
-  const userType = data;
+const StepThree: React.FC = () => {
 
   return (
     <div>
