@@ -186,7 +186,6 @@ main{
   margin-right: 12px;
 }
 
-/* login.css */
 .login-container {
   display: flex;
   flex-direction: column;
@@ -201,6 +200,7 @@ main{
   color: #666;
 }
 .login-container input {
+  margin-top: 8px;
   border: 1px solid gray;
   background-color: black;
   padding: 0.8em;
@@ -229,3 +229,139 @@ main{
   display: block;
   margin-top: 10px;
 }
+
+.quem-somos {
+  color: #666;
+  margin: 2em;
+}
+
+.quem-somos-titulo {
+  padding: 2em;
+  font-size: 18px;
+}
+
+.quem-somos-missao-valores {
+  padding: 3em;
+}
+
+.quem-somos-missao {
+  padding: 1em;
+}
+
+.quem-somos-valores {
+  padding: 1em;
+}
+
+.cadastro {
+  margin: 10px;
+}
+
+.cadastro-titulo {
+  color: #ccc;
+  font-size: 18px;
+  margin: 3px;
+}
+
+.cadastro p {
+  color: #666;
+  margin: 3px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 0px;
+}
+
+.button:hover {
+  background-color: #f2f2f2;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.buttons-container {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns, equal width */
+  gap: 10px;
+  align-items: center; /* Aligns buttons vertically in center */
+}
+
+@media (max-width: 768px) {
+  .buttons-container {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column; /* Organiza os botões em coluna em telas menores */
+  }
+}
+
+.formulario-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: left;
+  justify-content: center;
+  min-height: 40vh;
+  background-color: black;
+}
+
+.formulario-container h2 {
+  padding:1em;
+  color: #999;
+}
+
+.formulario {
+  font-size: 16px;
+  color: #999;
+}
+
+.formulario-container input {
+  margin-top: 8px;
+  margin-left: 12px;
+  border: 1px solid gray;
+  background-color: black;
+  padding: 0.8em;
+  align-items: left;
+  justify-content: center;
+  min-height: 8vh;
+}
+
+.formulario_input {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Allocate space for label and input */
+  align-items: start; /* Align content to the top */
+  margin-top: 8px;
+}
+
+.formulario-container button {
+  background-color: #007bff;
+  color: #fff;
+  margin: 0.8em;
+  padding: 0.4em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario-container button:hover {
+  background-color: #0056b3;
+}
+
+

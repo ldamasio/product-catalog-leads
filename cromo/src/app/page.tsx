@@ -1,13 +1,9 @@
-import Layout from '@/components/Layout';
+import React from 'react';
 import HomeMain from '@/pages/HomeMain';
 
 export default function Home() {
 
   return (
-    <>
-      <Layout>
-        <HomeMain />
-      </Layout>
-    </>
+    <HomeMain />
   );
 }
