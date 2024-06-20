@@ -1,6 +1,6 @@
 "use client;"
 
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
 import MultiStep from 'react-multistep'
@@ -10,10 +10,10 @@ import StepThree from '@/components/Steps/StepThree'
 import StepFour from '@/components/Steps/StepFour'
 
 const steps = [
-  { name: 'Perfil', component: <StepOne /> },
-  { name: 'Dados Pessoais', component: <StepTwo /> },
+  { name: 'Dados Pessoais', component: <StepOne /> },
+  { name: 'Informações Complementares', component: <StepTwo /> },
   { name: 'Endereço', component: <StepThree /> },
-  { name: 'Documentos', component: <StepFour /> },
+  { name: 'Aceite', component: <StepFour /> },
 ];
 
 const Formulario: React.FC = () => {
@@ -27,15 +27,36 @@ const Formulario: React.FC = () => {
     return <p>Carregando...</p>;
   }
 
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const handleNext = () => {
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
   return (
     <Layout>
       <div className='formulario-container'>
-        <p>Eu sou {ehParceiro}</p>
+        <p className='formulario-tipo'>Cadastro de {ehParceiro}</p>
         <MultiStep
           steps={steps}
-        />
+          activeStep={0}
+          direction='row'
+          stepCustomStyle={{ backgroundColor: '#333333' }}
+          prevButton={{ title: 'Anterior', style: { marginRight: '1em' } }}
+          nextButton={{ title: 'Próximo', style: { marginLeft: '1em' } }}
+          showNavigation={false}
+        >
+        </MultiStep>
       </div>
-    </Layout>
+    </Layout >
   )
 };
 

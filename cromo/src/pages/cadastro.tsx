@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from "@/components/Layout";
 import { faHandshake, faUser } from '@fortawesome/free-solid-svg-icons';
-import Button from '@/components/Button';
+import ButtonCadastro from '@/components/ButtonCadastro';
 
 const Cadastro: React.FC = () => {
 
-  const [ehParceiroState, setEhParceiroState] = useState(false);
-  
   const handleParceiroClick = () => {
     window.location.href = '/formulario?tipo=parceiro';
   };
@@ -22,19 +20,18 @@ const Cadastro: React.FC = () => {
         <p>Tudo pronto para começar?</p>
         <p>Escolha o seu perfil para se identificar.</p>
         <div className="buttons-container">
-          <Button
+          <ButtonCadastro 
             label="Quero ser Parceiro"
             icon={faHandshake}
             onClick={() => handleParceiroClick()}
           />
-          <Button
+          <ButtonCadastro
             label="Quero ser Usuário"
             icon={faUser}
             onClick={() => handleUsuarioClick()}
           />
         </div>
       </div>
-      <p>Você optou por: {ehParceiroState ? 'Parceiro' : 'Usuário'}</p>
     </Layout>
   );
 };

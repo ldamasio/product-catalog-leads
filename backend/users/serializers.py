@@ -10,9 +10,10 @@ class DetalhesSerializer(serializers.ModelSerializer):
         fields = [
             'nome', 'estado_civil', 'rg_numero', 'rg_orgexp', 'rg_dataemissao', 
             'cpf', 'datanasc', 'celular', 'renda', 'mae', 'pai', 
-            'nacionalidade', 'residencia_estado', 'residencial_cidade', 
-            'classe_profissional', 'profissao', 'valor_patrimonio', 'pep', 
-            'fatca', 'telefones_adicionais', 'nome_referencia', 'telefone_referencia'
+            'nacionalidade', 'classe_profissional', 'profissao', 
+            'valor_patrimonio', 'pep', 'fatca', 'telefones_adicionais', 
+            'nome_referencia', 'telefone_referencia',
+            'residencia_estado', 'residencial_cidade'
         ]
 
 class UserSerializer(serializers.ModelSerializer):

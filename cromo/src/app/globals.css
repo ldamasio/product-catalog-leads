@@ -253,43 +253,18 @@ main{
 }
 
 .cadastro {
-  margin: 10px;
+  margin-top: 10px;
 }
 
 .cadastro-titulo {
   color: #ccc;
   font-size: 18px;
-  margin: 3px;
+  margin-top: 3px;
 }
 
 .cadastro p {
   color: #666;
-  margin: 3px;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #fff;
-  margin: 0px;
-}
-
-.button:hover {
-  background-color: #f2f2f2;
-}
-
-.icon {
-  margin-right: 5px;
-  font-size: 16px;
-}
-
-.label {
-  font-weight: bold;
+  margin-top: 3px;
 }
 
 .buttons-container {
@@ -298,6 +273,26 @@ main{
   grid-template-columns: repeat(2, 1fr); /* Two columns, equal width */
   gap: 10px;
   align-items: center; /* Aligns buttons vertically in center */
+}
+
+.button-cadastro {
+  background-color: #292929;
+  margin:0.6em;
+  padding:1.2em;
+  max-width:500px;
+}
+
+.button-cadastro:hover {
+  background-color: #333333;
+}
+
+.button-cadastro-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.button-cadastro-label {
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -327,20 +322,28 @@ main{
   color: #999;
 }
 
+.formulario-tipo {
+  color: #ccc
+}
+
 .formulario {
   font-size: 16px;
   color: #999;
+  margin-bottom: 18px;
 }
 
-.formulario-container input {
+.formulario-container input,
+.formulario-container select {
   margin-top: 8px;
   margin-left: 12px;
   border: 1px solid gray;
-  background-color: black;
+  background-color: #1F1F1F;
   padding: 0.8em;
   align-items: left;
   justify-content: center;
   min-height: 8vh;
+  padding-right: 1.5em; /* Add space for dropdown arrow */
+  cursor: pointer; /* Indicate clickable behavior */
 }
 
 .formulario_input {
@@ -348,6 +351,13 @@ main{
   grid-template-rows: auto 1fr; /* Allocate space for label and input */
   align-items: start; /* Align content to the top */
   margin-top: 8px;
+}
+
+.formulario-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  background-color: #333333; /* White background for dark layout */
+  border-color: #1F1F1F; /* Match background color of other inputs */
 }
 
 .formulario-container button {
@@ -364,4 +374,12 @@ main{
   background-color: #0056b3;
 }
 
+.formulario-submit-container {
+  width: 100%;
+}
+
+.formulario-submit-container button {
+  width: 300px;
+  padding: 14px;
+}
 
