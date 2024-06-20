@@ -11,7 +11,7 @@ import StepFour from '@/components/Steps/StepFour'
 
 const Formulario: React.FC = () => {
   
-  const [isChecked, setIsChecked] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
   
   const steps = [
     { name: 'Dados Pessoais', component: <StepOne /> },
