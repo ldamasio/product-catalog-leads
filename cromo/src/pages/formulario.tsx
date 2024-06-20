@@ -9,15 +9,31 @@ import StepTwo from '@/components/Steps/StepTwo'
 import StepThree from '@/components/Steps/StepThree'
 import StepFour from '@/components/Steps/StepFour'
 
-const steps = [
-  { name: 'Dados Pessoais', component: <StepOne /> },
-  { name: 'Informações Complementares', component: <StepTwo /> },
-  { name: 'Endereço', component: <StepThree /> },
-  { name: 'Aceite', component: <StepFour /> },
-];
-
 const Formulario: React.FC = () => {
-
+  
+  const [isChecked, setIsChecked] = useState(0);
+  
+  const steps = [
+    { name: 'Dados Pessoais', component: <StepOne /> },
+    { name: 'Informações Complementares', component: <StepTwo /> },
+    { name: 'Endereço', component: <StepThree /> },
+    { name: 'Aceite', component: <StepFour isChecked={isChecked} setIsChecked={setIsChecked}/> },
+  ];
+  
+  const [currentStep, setCurrentStep] = useState(0);
+  
+  const handleNext = () => {
+    if (currentStep < steps.length - 1) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+  
+  const handlePrev = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+  
   const router = useRouter();
   const { tipo } = router.query;
 
@@ -26,20 +42,6 @@ const Formulario: React.FC = () => {
   if (ehParceiro === null) {
     return <p>Carregando...</p>;
   }
-
-  const [currentStep, setCurrentStep] = useState(0);
-
-  const handleNext = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
 
   return (
     <Layout>
@@ -50,13 +52,13 @@ const Formulario: React.FC = () => {
           activeStep={0}
           direction='row'
           stepCustomStyle={{ backgroundColor: '#333333' }}
-          prevButton={{ title: 'Anterior', style: { marginRight: '1em' } }}
-          nextButton={{ title: 'Próximo', style: { marginLeft: '1em' } }}
-          showNavigation={false}
+          prevButton={{ title: 'Anterior', style: { marginRight: '1em', backgroundColor: '#333333' } }}
+          nextButton={{ title: 'Próximo', style: { marginLeft: '1em', backgroundColor: '#333333' } }}
+          showNavigation={true}
         >
         </MultiStep>
       </div>
-    </Layout >
+    </Layout>
   )
 };
 

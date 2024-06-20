@@ -383,3 +383,31 @@ main{
   padding: 14px;
 }
 
+.list-disc {
+  list-style-type: disc; /* Define o marcador como um pontinho */
+  color: gray; /* Cor do pontinho (opcional) */
+  margin-top:30px;
+  margin-left: 20px;
+}
+
+.checkbox-container {
+  display: table;
+  padding: 5px;
+}
+
+.checkbox-container-input-div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.checkbox-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: auto;
+}
+
+.checkbox-text:hover {
+  cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+}
+
+

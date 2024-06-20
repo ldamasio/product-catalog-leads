@@ -4,8 +4,8 @@ const StepThree: React.FC = () => {
 
   return (
     <div>
-      <h1>Passo 3: Endereço</h1>
       <div className='formulario'>
+      <h1>Passo 3: Endereço</h1>
         <div className='container u-full-width'>
           {/* Referência */}
           <div className='row'>
