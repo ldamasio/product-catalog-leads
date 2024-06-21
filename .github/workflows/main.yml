@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v5.0.0
         with: 
           context: ./backend
-          file: ./backend/docker/Dockerfile
+          file: ./backend/docker/Dockerfile_django
           push: true
           tags: | 
             ldamasio/cro-backend-prod:0.0.${{github.run_number}}

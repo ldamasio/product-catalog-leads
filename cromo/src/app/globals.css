@@ -307,6 +307,18 @@ main{
   }
 }
 
+.formulario {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 18px;
+}
+
+.formulario h1 {
+  margin: 15px;
+  font-size: 18px;
+  color: #3eb1be;
+}
+
 .formulario-container {
   display: flex;
   flex-direction: column;
@@ -324,12 +336,6 @@ main{
 
 .formulario-tipo {
   color: #ccc
-}
-
-.formulario {
-  font-size: 16px;
-  color: #999;
-  margin-bottom: 18px;
 }
 
 .formulario-container input,
