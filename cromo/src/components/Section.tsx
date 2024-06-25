@@ -7,7 +7,7 @@ interface SectionProps {
   imageUrl: string;
 }
 
-const Section: React.FC<SectionProps> = ({ title, description, imageUrl, clipPath }) => {
+const Section: React.FC<SectionProps> = ({ title, description, imageUrl }) => {
   return (
     <div className="sectionContainer">
       <div className="sectionContent">
