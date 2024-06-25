@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { handleSubmit } from '@/utils/handleSubmit'; // Importe a função handleSubmit
 
-const StepFour: React.FC<{ isChecked: boolean; setIsChecked: (value: boolean) => void }> = ({ isChecked, setIsChecked }) => {
+interface IStepFourProps {
+}
 
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    email: '',
-  });
+const StepFour: React.FC<IStepFourProps> = () => {
 
-  const handleCheckboxClick = () => {
-    setIsChecked(!isChecked); // Inverte o estado do checkbox
-  };
-
-  const handleSubmit = async () => {
+  const handleSubmitForm = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/register/', formData);
-      // Manipule a resposta aqui (por exemplo, exiba uma mensagem de sucesso)
-      console.log('Resposta da API:', response.data);
+      await handleSubmit('teste'); // Wait for the promise to resolve
     } catch (error) {
-      // Trate erros aqui (por exemplo, exiba uma mensagem de erro)
-      console.error('Erro ao enviar dados:', error);
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -41,7 +31,9 @@ const StepFour: React.FC<{ isChecked: boolean; setIsChecked: (value: boolean) =>
                 </li>
               </ul>
               <span className='checkbox-container'>
-                <div className='checkbox-text' onClick={handleCheckboxClick}>
+                <div className='checkbox-text' 
+                // onClick={handleCheckboxClick}
+                >
                   Aceito
                 </div>
                 <div className='checkbox-container-input-div'>
@@ -49,13 +41,17 @@ const StepFour: React.FC<{ isChecked: boolean; setIsChecked: (value: boolean) =>
                     className='checkbox-container-input'
                     type='checkbox'
                     autoFocus
-                    checked={isChecked} // Define o estado inicial do checkbox
-                    onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
+                    // checked={isChecked} // Define o estado inicial do checkbox
+                    // onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
                   />
                 </div>
               </span>
               <div className='formulario-submit-container'>
-                <button>Enviar</button>
+                <button
+                  onClick={handleSubmitForm}
+                >
+                  Enviar
+                </button>
               </div>
             </div>
           </form>

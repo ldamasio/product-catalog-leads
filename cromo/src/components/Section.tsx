@@ -1,10 +1,10 @@
 import * as React from 'react';
+import Link from 'next/link';
 
 interface SectionProps {
   title: string;
   description: string;
   imageUrl: string;
-  clipPath?: string;
 }
 
 const Section: React.FC<SectionProps> = ({ title, description, imageUrl, clipPath }) => {
@@ -12,21 +12,21 @@ const Section: React.FC<SectionProps> = ({ title, description, imageUrl, clipPat
     <div className="sectionContainer">
       <div className="sectionContent">
         <div className="sectionImage">
-          <img src={imageUrl} alt={title} width="100%" style={clipPath ? { clipPath } : undefined} />
+          <img src={imageUrl} alt={title} width="100%" />
         </div>
         <div className="sectionText">
           <h1 className="sectionTitle">{title}</h1>
           <p className="sectionDescription">{description}</p>
           <div className="sectionActions">
-            <a
-              href="cadastro"
+            <Link
+              href="cadastrar"
               className="sectionFinancingButton"
             >
               Obter Financiamento
-            </a>
-            <a href="saibamais" className="sectionSaibaMaisLink">
+            </Link>
+            <Link href="saibamais" className="sectionSaibaMaisLink">
               Saiba mais <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

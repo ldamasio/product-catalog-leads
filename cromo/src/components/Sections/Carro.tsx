@@ -10,7 +10,6 @@ const Carro: React.FC<CarroProps> = () => {
       title="Financiar um Carro"
       description="Seu carro está te esperando aqui. Descubra como adquirir o carro dos seus sonhos com parcelas que cabem no seu bolso."
       imageUrl="hb20.jpg"
-      clipPath=""
     />
   );
 };

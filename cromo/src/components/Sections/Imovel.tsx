@@ -10,7 +10,6 @@ const Imovel: React.FC<ImovelProps> = () => {
       title="Financiar um Imóvel"
       description="Seu Imóvel está te esperando aqui. Descubra como adquirir o Imóvel dos seus sonhos com parcelas que cabem no seu bolso."
       imageUrl="imovel.png"
-      clipPath=""
     />
   );
 };

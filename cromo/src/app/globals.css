@@ -252,61 +252,6 @@ main{
   padding: 1em;
 }
 
-.cadastro {
-  margin-top: 10px;
-}
-
-.cadastro-titulo {
-  color: #ccc;
-  font-size: 18px;
-  margin-top: 3px;
-}
-
-.cadastro p {
-  color: #666;
-  margin-top: 3px;
-}
-
-.buttons-container {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns, equal width */
-  gap: 10px;
-  align-items: center; /* Aligns buttons vertically in center */
-}
-
-.button-cadastro {
-  background-color: #292929;
-  margin:0.6em;
-  padding:1.2em;
-  max-width:500px;
-}
-
-.button-cadastro:hover {
-  background-color: #333333;
-}
-
-.button-cadastro-icon {
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-.button-cadastro-label {
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .buttons-container {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .buttons-container {
-    flex-direction: column; /* Organiza os botões em coluna em telas menores */
-  }
-}
-
 .formulario {
   font-size: 16px;
   color: #999;

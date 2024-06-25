@@ -1,6 +1,7 @@
 import React from 'react'
 
 const StepOne: React.FC = () => {
+
   return (
     <div className='formulario'>
       <h1>Passo 1: Seu Perfil</h1>

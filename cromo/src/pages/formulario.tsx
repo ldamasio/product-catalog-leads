@@ -1,6 +1,6 @@
 "use client;"
 
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
 import MultiStep from 'react-multistep'
@@ -9,44 +9,47 @@ import StepTwo from '@/components/Steps/StepTwo'
 import StepThree from '@/components/Steps/StepThree'
 import StepFour from '@/components/Steps/StepFour'
 
-const Formulario: React.FC = () => {
-  
-  const [isChecked, setIsChecked] = useState(false);
+interface IBody {
+  isPartner: boolean;
+  name: string;
+  email: string;
+  isChecked: boolean;
+}
+
+  const handleSubmit = async () => {
+    try {
+      console.log('Formulario submetido --->>> Pedro e gabigol ');
+    } catch (error) {
+      console.error('Erro ao enviar dados:', error);
+    }
+  };
+
+const Formulario: React.FC<IBody> = () => {
   
   const steps = [
     { name: 'Dados Pessoais', component: <StepOne /> },
     { name: 'Informações Complementares', component: <StepTwo /> },
     { name: 'Endereço', component: <StepThree /> },
-    { name: 'Aceite', component: <StepFour isChecked={isChecked} setIsChecked={setIsChecked}/> },
+    { name: 'Aceite', component: <StepFour /> },
   ];
-  
-  const [currentStep, setCurrentStep] = useState(0);
-  
-  const handleNext = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
-    }
-  };
-  
-  const handlePrev = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
-  
+
   const router = useRouter();
   const { tipo } = router.query;
 
-  const ehParceiro = typeof tipo === 'string' ? tipo : '';
+  const isPartner = typeof tipo === 'string' ? tipo : '';
 
-  if (ehParceiro === null) {
+  if (isPartner === null) {
     return <p>Carregando...</p>;
   }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    console.log('Updated body:', steps);
+  };
 
   return (
     <Layout>
       <div className='formulario-container'>
-        <p className='formulario-tipo'>Cadastro de {ehParceiro}</p>
+        <p className='formulario-tipo'>Cadastro de {isPartner}</p>
         <MultiStep
           steps={steps}
           activeStep={0}

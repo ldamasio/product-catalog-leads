@@ -10,7 +10,6 @@ const Moto: React.FC<MotoProps> = () => {
       title="Financiar uma Moto"
       description="Sua Moto dos Sonhos te espera por aqui!Seu Moto está te esperando aqui. Realize o seu desejo de liberdade e aventura com parcelas que cabem no seu bolso."
       imageUrl="honda160.png"
-      clipPath=""
     />
   );
 };

@@ -1,0 +1,50 @@
+.cadastro {
+  max-width: 500px;
+  padding: 40px;
+  margin-top: 10px;
+}
+
+.cadastro p {
+  color: #666;
+  margin-top: 3px;
+}
+
+.cadastroTitulo {
+  color: #ccc;
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+.cadastroLinksContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Espaçamento entre os links */
+}
+
+.cadastroLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #333;
+  padding: 1rem;
+  margin: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cadastroLink:hover {
+  background-color: #666; /* Cor de fundo quando o mouse passa por cima */
+}
+
+/* Estilo para o ícone */
+.cadastroLinkIcon {
+  font-size: 24px; /* Tamanho do ícone */
+  margin-bottom: 0.5rem; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Estilo para o texto span */
+.cadastroLink span {
+  font-size: 14px;
+}
