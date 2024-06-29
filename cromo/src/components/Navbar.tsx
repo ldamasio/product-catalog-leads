@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Contatos', href: '/contatos' },
 ]
 
-export default function Nabbar() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (

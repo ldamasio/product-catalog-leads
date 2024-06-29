@@ -268,47 +268,21 @@ main{
   display: flex;
   flex-direction: column;
   padding: 1em;
-  align-items: left;
-  justify-content: center;
   min-height: 40vh;
   background-color: black;
 }
 
-.formulario-container h2 {
-  padding:1em;
-  color: #999;
-}
-
-.formulario-tipo {
-  color: #ccc
-}
-
 .formulario-container input,
 .formulario-container select {
-  margin-top: 8px;
-  margin-left: 12px;
-  border: 1px solid gray;
-  background-color: #1F1F1F;
-  padding: 0.8em;
+  width: 100%;
+  margin-bottom: 8px;
+  min-height: 8vh;
   align-items: left;
   justify-content: center;
-  min-height: 8vh;
-  padding-right: 1.5em; /* Add space for dropdown arrow */
-  cursor: pointer; /* Indicate clickable behavior */
-}
-
-.formulario_input {
-  display: grid;
-  grid-template-rows: auto 1fr; /* Allocate space for label and input */
-  align-items: start; /* Align content to the top */
-  margin-top: 8px;
-}
-
-.formulario-container input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  background-color: #333333; /* White background for dark layout */
-  border-color: #1F1F1F; /* Match background color of other inputs */
+  background-color: #1F1F1F;
+  padding: 0.8em;
+  padding-right: 1.5em;
+  cursor: pointer;
 }
 
 .formulario-container button {
@@ -325,18 +299,38 @@ main{
   background-color: #0056b3;
 }
 
-.formulario-submit-container {
-  width: 100%;
+.formulario-buttons-container {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr); 
+  grid-gap: 10px;
+  justify-content: space-between;
+  margin-top: 2em;
 }
 
-.formulario-submit-container button {
-  width: 300px;
-  padding: 14px;
+.formulario-button-prev {
+  grid-column: 1 / span 1;
+}
+
+.formulario-button-next {
+  grid-column: 2 / span 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formulario-input {
+  display: grid;
+}
+
+.formulario-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  background-color: #333333;
+  border-color: #1F1F1F;
 }
 
 .list-disc {
-  list-style-type: disc; /* Define o marcador como um pontinho */
-  color: gray; /* Cor do pontinho (opcional) */
+  list-style-type: disc;
+  color: gray;
   margin-top:30px;
   margin-left: 20px;
 }
@@ -358,7 +352,7 @@ main{
 }
 
 .checkbox-text:hover {
-  cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+  cursor: pointer;
 }
 
 

@@ -1,6 +1,12 @@
 import React from 'react';
 
-const StepTwo: React.FC = () => {
+interface StepProps {
+  nextStep: () => void;
+  previousStep: () => void;
+
+}
+
+const StepTwo: React.FC<StepProps> = ({ nextStep, previousStep }) => {
 
   return (
     <div className='formulario'>
@@ -166,9 +172,13 @@ const StepTwo: React.FC = () => {
             />
           </div>
         </div>
+        <div className="button-container flex justify-between mt-4"> {/* New container with justify-between */}
+          <button onClick={previousStep} className="bg-blue-400 text-white py-2 px-4 rounded">Voltar</button>
+          <button onClick={nextStep} className="bg-blue-400 text-white py-2 px-4 rounded">Próximo</button>
+        </div>
       </div>
-    </div>  
+    </div>
   );
 };
 
-      export default StepTwo;
+export default StepTwo;

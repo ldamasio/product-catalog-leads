@@ -1,11 +1,16 @@
 import React from 'react';
 
-const StepThree: React.FC = () => {
+interface StepProps {
+  nextStep: () => void;
+  previousStep: () => void;
+}
+
+const StepThree: React.FC<StepProps> = ({ nextStep, previousStep }) => {
 
   return (
     <div>
       <div className='formulario'>
-      <h1>Passo 3: Endereço</h1>
+        <h1>Passo 3: Endereço</h1>
         <div className='container u-full-width'>
           {/* Referência */}
           <div className='row'>

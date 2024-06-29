@@ -13,13 +13,13 @@ const Cadastrar: React.FC = () => {
         <p>Escolha o seu perfil para se identificar.</p>
         <div className={styles.cadastroLinksContainer}>
           <div className={styles.cadastroLink}>
-            <Link href="/formulario?tipo=parceiro" as="/formulario/parceiro">
+            <Link href="/formulario/parceiro">
               <FontAwesomeIcon icon={faHandshake} className={styles.cadastroLinkIcon} />
               <span>Quero ser Parceiro</span>
             </Link>
           </div>
           <div className={styles.cadastroLink}>
-            <Link href="/formulario?tipo=usuario" as="/formulario/usuario">
+            <Link href="/formulario/usuario">
               <FontAwesomeIcon icon={faUser} className={styles.cadastroLinkIcon} />
               <span>Quero ser Usuário</span>
             </Link>

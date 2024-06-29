@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout";
+import { FormProvider } from '@/context/FormContext';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
       </head>
       <body className={inter.className} suppressHydrationWarning={true}>
         <Layout>
-          {children}
+          <FormProvider>
+            {children}
+          </FormProvider>
         </Layout>
       </body>
     </html>

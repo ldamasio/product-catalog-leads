@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { handleSubmit } from '@/utils/handleSubmit'; // Importe a função handleSubmit
 
 interface IStepFourProps {
+  isParceiro: boolean;
+  previousStep: () =>  void;
 }
 
-const StepFour: React.FC<IStepFourProps> = () => {
+const StepFour: React.FC<IStepFourProps> = ({ isParceiro, previousStep }) => {
 
   const handleSubmitForm = async () => {
     try {
@@ -16,7 +18,8 @@ const StepFour: React.FC<IStepFourProps> = () => {
 
   return (
     <div className='formulario'>
-      <h1>Passo 4: Aceite dos termos e envio dos dados</h1>
+      {isParceiro}
+      <h1>Passo 4: Aceite dos termos</h1>
       <div className='container u-full-width'>
         <div className='container'>
           <form className='row'>
@@ -31,7 +34,7 @@ const StepFour: React.FC<IStepFourProps> = () => {
                 </li>
               </ul>
               <span className='checkbox-container'>
-                <div className='checkbox-text' 
+                <div className='checkbox-text'
                 // onClick={handleCheckboxClick}
                 >
                   Aceito
@@ -41,8 +44,8 @@ const StepFour: React.FC<IStepFourProps> = () => {
                     className='checkbox-container-input'
                     type='checkbox'
                     autoFocus
-                    // checked={isChecked} // Define o estado inicial do checkbox
-                    // onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
+                  // checked={isChecked} // Define o estado inicial do checkbox
+                  // onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
                   />
                 </div>
               </span>
