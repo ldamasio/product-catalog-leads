@@ -8,6 +8,14 @@ interface FormState {
   step3: string;
   step4: string;
   isParceiro: boolean;
+  fullname: string;
+  email: string;
+  estadoCivil: string;
+  rgNumero: string;
+  rgOrgexp: string;
+  dataNasc: string;
+  cpf: string;
+  celular: string;
 }
 
 interface FormContextProps {
@@ -23,7 +31,15 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     step2: '',
     step3: '',
     step4: '',
-    isParceiro: false
+    isParceiro: false,
+    fullname: '',
+    email: '',
+    estadoCivil: '',
+    rgNumero: '',
+    rgOrgexp: '',
+    dataNasc: '',
+    cpf: '',
+    celular: '',
   });
 
   return (
