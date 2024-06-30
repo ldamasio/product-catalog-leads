@@ -181,7 +181,7 @@ main{
 
 .footer-photo-icone {
   width:16px;
-  color: green;
+  color: rgb(12, 100, 12);
   float: left;
   margin-right: 12px;
 }
@@ -253,9 +253,9 @@ main{
 }
 
 .formulario {
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
   font-size: 16px;
   color: #999;
   margin-bottom: 18px;
@@ -330,6 +330,38 @@ main{
   grid-column: 2 / span 1;
   display: flex;
   justify-content: flex-end;
+}
+
+.formulario-button-submit button {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: default;
+}
+
+.formulario-button-submit:hover button {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.formulario-button-submit:active button {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.formulario-button-submit.enabled button {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  cursor: pointer;
+}
+
+.formulario-button-submit.enabled:hover button {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.formulario-button-submit.enabled:active button {
+  background-color: #4caf50;
+  border-color: #4caf50;
 }
 
 .formulario-input {

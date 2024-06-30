@@ -26,6 +26,7 @@ interface FormState {
   telefonesAdicionais: string[];
   nomeReferencia: string;
   telefoneReferencia: string;
+  isChecked: boolean;
 }
 
 interface FormContextProps {
@@ -60,6 +61,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     telefonesAdicionais: [],
     nomeReferencia: '',
     telefoneReferencia: '',
+    isChecked: false,
   });
 
   return (

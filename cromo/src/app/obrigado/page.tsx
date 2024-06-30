@@ -4,7 +4,8 @@ const Obrigado: React.FC = () => {
 
   return (
     <div className="login-container">
-        obrigado
+        <p>Dados enviados</p>
+        <p>Cadastro efetuado com sucesso!</p>
     </div>
   );
 };

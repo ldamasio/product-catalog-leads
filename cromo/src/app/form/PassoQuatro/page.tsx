@@ -7,9 +7,16 @@ const PassoQuatro = () => {
   const { formState, setFormState } = useFormContext();
   const router = useRouter();
 
+  const handleCheckboxClick = () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      isChecked: !prevState.isChecked,
+    }));
+  };
+
   const handleSubmit = () => {
     console.log('Form submitted:', formState);
-    // Aqui você pode adicionar a lógica de submissão do formulário
+    console.log(formState);
     router.push('/obrigado');
   };
 
@@ -32,9 +39,7 @@ const PassoQuatro = () => {
           </li>
         </ul>
         <span className='checkbox-container'>
-          <div className='checkbox-text'
-          // onClick={handleCheckboxClick}
-          >
+          <div className='checkbox-text' onClick={handleCheckboxClick}>
             Aceito
           </div>
           <div className='checkbox-container-input-div'>
@@ -42,19 +47,24 @@ const PassoQuatro = () => {
               className='checkbox-container-input'
               type='checkbox'
               autoFocus
-            // checked={isChecked} // Define o estado inicial do checkbox
-            // onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
+              checked={formState.isChecked} // Define o estado inicial do checkbox
+              onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
             />
           </div>
         </span>
-
 
         <div className='formulario-buttons-container'>
           <div className='formulario-button-prev'>
             <button onClick={handleBack}>Voltar</button>
           </div>
-          <div className='formulario-button-next'>
-            <button onClick={handleSubmit}>Submit</button>
+          <div 
+            className={`formulario-button-next formulario-button-submit ${
+              formState.isChecked ? 'enabled' : ''
+            }`}
+          >
+            <button disabled={!formState.isChecked} onClick={handleSubmit}>
+              Enviar agora
+            </button>
           </div>
         </div>
       </div>
