@@ -1,6 +1,5 @@
 'use client'
 
-import React, { useEffect } from 'react';
 import { useFormContext } from '@/context/FormContext';
 import { useRouter } from 'next/navigation';
 
@@ -9,7 +8,7 @@ const PassoUm: React.FC = () => {
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormState(prev => ({ ...prev, step1: e.target.value }));
+    setFormState(prev => ({ ...prev, fullname: e.target.value }));
   };
 
   const handleNext = () => {
@@ -38,9 +37,8 @@ const PassoUm: React.FC = () => {
           type="text"
           name="email"
           placeholder="E-mail"
-          value={formState.email}
-          onChange={handleChange}
-          autoFocus
+          // value={formState.email}
+          // onChange={handleChange}
           required
         />
         <select
@@ -54,7 +52,7 @@ const PassoUm: React.FC = () => {
           <option value='separado'>Separado</option>
         </select>
         <input
-          placeholder='RG: 000.000.000-00'
+          placeholder='RG: 000.000.000-65'
           type='text'
           value={formState.rgNumero}
           required

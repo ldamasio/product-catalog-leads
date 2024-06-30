@@ -8,7 +8,7 @@ const PassoDois = () => {
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormState(prev => ({ ...prev, step2: e.target.value }));
+    setFormState(prev => ({ ...prev, celular: e.target.value }));
   };
 
   const handleNext = () => {
@@ -23,7 +23,8 @@ const PassoDois = () => {
     <div className='formulario'>
       <h1>Passo 2: Informações Complementares</h1>
       <div className='formulario-container'>
-        <input type="text" value={formState.step2} onChange={handleChange} />
+        <input type="text" value={formState.celular} onChange={handleChange} />
+
         <div className='formulario-buttons-container'>
           <div className='formulario-button-prev'>
             <button onClick={handleBack}>Voltar</button>
