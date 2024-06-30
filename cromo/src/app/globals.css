@@ -253,6 +253,9 @@ main{
 }
 
 .formulario {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   font-size: 16px;
   color: #999;
   margin-bottom: 18px;
@@ -270,6 +273,18 @@ main{
   padding: 1em;
   min-height: 40vh;
   background-color: black;
+}
+
+@media (min-width: 768px) {
+  .formulario-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .formulario-container {
+    width: 100%;
+  }
 }
 
 .formulario-container input,

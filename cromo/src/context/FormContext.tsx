@@ -3,19 +3,29 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface FormState {
-  step1: string;
-  step2: string;
-  step3: string;
-  step4: string;
   isParceiro: boolean;
   fullname: string;
   email: string;
+  dataNasc: string;
   estadoCivil: string;
   rgNumero: string;
   rgOrgexp: string;
-  dataNasc: string;
   cpf: string;
   celular: string;
+  renda: number;
+  mae: string;
+  pai: string;
+  nacionalidade: string;
+  residenciaEstado: string;
+  residenciaCidade: string;
+  classeProfissional: string;
+  profissao: string;
+  valorPatrimonio: number;
+  pep: boolean;
+  fatca: boolean;
+  telefonesAdicionais: string[];
+  nomeReferencia: string;
+  telefoneReferencia: string;
 }
 
 interface FormContextProps {
@@ -27,19 +37,29 @@ const FormContext = createContext<FormContextProps | undefined>(undefined);
 
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   const [formState, setFormState] = useState<FormState>({
-    step1: '',
-    step2: '',
-    step3: '',
-    step4: '',
     isParceiro: false,
     fullname: '',
     email: '',
+    dataNasc: '',
     estadoCivil: '',
     rgNumero: '',
     rgOrgexp: '',
-    dataNasc: '',
     cpf: '',
     celular: '',
+    renda: 0,
+    mae: '',
+    pai: '',
+    nacionalidade: '',
+    residenciaEstado: '',
+    residenciaCidade: '',
+    classeProfissional: '',
+    profissao: '',
+    valorPatrimonio: 0,
+    pep: false,
+    fatca: false,
+    telefonesAdicionais: [],
+    nomeReferencia: '',
+    telefoneReferencia: '',
   });
 
   return (
