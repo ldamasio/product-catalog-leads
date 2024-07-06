@@ -4,6 +4,9 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface FormState {
   isParceiro: boolean;
+  isParceiroTyping: boolean;
+  parceiroFullname: string;
+  parceiroEmail: string;
   fullname: string;
   email: string;
   dataNasc: string;
@@ -39,6 +42,9 @@ const FormContext = createContext<FormContextProps | undefined>(undefined);
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   const [formState, setFormState] = useState<FormState>({
     isParceiro: false,
+    isParceiroTyping: false,
+    parceiroFullname: '',
+    parceiroEmail: '',
     fullname: '',
     email: '',
     dataNasc: '',

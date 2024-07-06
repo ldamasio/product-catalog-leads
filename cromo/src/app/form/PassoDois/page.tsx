@@ -16,6 +16,20 @@ const PassoDois = () => {
     }
   };
 
+  const handleCheckboxClickPep = () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      pep: !prevState.pep,
+    }));
+  };
+
+  const handleCheckboxClickFatca = () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      fatca: !prevState.fatca,
+    }));
+  };
+  
   const handleNext = () => {
     router.push('/form/PassoTres');
   };
@@ -137,29 +151,40 @@ const PassoDois = () => {
           />
         </label>
 
-        <label htmlFor="pep">
-          PEP (Pessoa Exposta Politicamente):
-          <input
-            id="pep"
-            name="pep"
-            type="checkbox"
-            value={formState.pep ? "true" : "false"}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="fatca">
-          FATCA (Foreign Account Tax Compliance Act):
-          <input
-            id="fatca"
-            name="fatca"
-            type="checkbox"
-            value={formState.fatca ? "true" : "false"}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="telefonesAdicionais">
+        <span className='checkbox-container'>
+          <div className='checkbox-text' onClick={handleCheckboxClickPep}>
+            PEP (Pessoa Exposta Politicamente):
+          </div>
+          <div className='checkbox-container-input-div'>
+            <input
+              className='checkbox-container-input'
+              autoFocus
+              type="checkbox"
+              checked={formState.pep}
+              onChange={handleCheckboxClickPep}
+              required
+            />
+          </div>
+        </span>
+
+
+        <span className='checkbox-container'>
+          <div className='checkbox-text' onClick={handleCheckboxClickFatca}>
+            FATCA (Foreign Account Tax Compliance Act):
+          </div>
+          <div className='checkbox-container-input-div'>
+            <input
+              className='checkbox-container-input'
+              autoFocus
+              type="checkbox"
+              checked={formState.fatca}
+              onChange={handleCheckboxClickFatca}
+              required
+            />
+          </div>
+        </span>
+
+        <label htmlFor="telefonesAdicionais" className="mt-3">
           Telefones Adicionais (separados por vírgula):
           <input
             id="telefonesAdicionais"

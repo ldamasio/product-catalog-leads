@@ -12,6 +12,13 @@ const PassoUm: React.FC = () => {
     setFormState(prevState => ({ ...prevState, [name]: value }));
   };
 
+  const handleCheckboxClickParceiroTyping = () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      isParceiroTyping: !prevState.isParceiroTyping,
+    }));
+  };
+
   const handleNext = () => {
     router.push('/form/PassoDois');
   };
@@ -19,6 +26,57 @@ const PassoUm: React.FC = () => {
   return (
     <div className='formulario'>
       <div className='formulario-container'>
+        {!formState.isParceiro &&
+          <p><strong>ATENÇÃO!</strong> Esta ficha de cadastro é destinada para usuários que desejam ser clientes da Cromo Financiamentos.</p>
+        }
+        {!formState.isParceiro &&
+          <p>Caso você seja um parceiro cadastrando dados em nome de um cliente, identifique-se como parceiro.</p>
+        }
+        {!formState.isParceiro &&
+          <span className='checkbox-container'>
+            <div className='checkbox-text' onClick={handleCheckboxClickParceiroTyping}>
+              Sou parceiro cadastrando um cliente:
+            </div>
+            <div className='checkbox-container-input-div'>
+              <input
+                className='checkbox-container-input'
+                type="checkbox"
+                checked={formState.isParceiroTyping}
+                onChange={handleCheckboxClickParceiroTyping}
+                required
+              />
+            </div>
+          </span>
+        }
+
+        {formState.isParceiroTyping &&
+          <label htmlFor="fullname">
+            Nome Completo do Parceiro:
+            <input
+              type="text"
+              id="parceiroFullname"
+              name="parceiroFullname"
+              placeholder=""
+              value={formState.parceiroFullname}
+              onChange={handleChange}
+            />
+          </label>
+        }
+
+        {formState.isParceiroTyping &&
+          <label htmlFor="fullname">
+            E-mail do Parceiro:
+            <input
+              type="text"
+              id="parceiroEmail"
+              name="parceiroEmail"
+              placeholder=""
+              value={formState.parceiroEmail}
+              onChange={handleChange}
+            />
+          </label>
+        }
+
         <h1>Passo 1: Seu Perfil</h1>
         <label htmlFor="fullname">
           Nome Completo:
