@@ -37,8 +37,8 @@ jobs:
           file: ./backend/docker/Dockerfile_django
           push: true
           tags: | 
-            ldamasio/cro-backend-prod:0.0.${{github.run_number}}
-            ldamasio/cro-backend-prod:latest
+            ldamasio/cro-backend-django-prod:1.0.${{github.run_number}}
+            ldamasio/cro-backend-django-prod:latest
         env:
           ACTIONS_RUNNER_DEBUG: true
           ACTIONS_STEP_DEBUG: true
