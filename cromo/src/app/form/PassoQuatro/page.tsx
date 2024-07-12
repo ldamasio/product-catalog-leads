@@ -47,8 +47,8 @@ const PassoQuatro = () => {
               className='checkbox-container-input'
               type='checkbox'
               autoFocus
-              checked={formState.isChecked} // Define o estado inicial do checkbox
-              onChange={handleCheckboxClick} // Atualiza o estado do checkbox ao clicar
+              checked={formState.isChecked}
+              onChange={handleCheckboxClick}
             />
           </div>
         </span>

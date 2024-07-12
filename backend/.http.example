@@ -1,0 +1,37 @@
+POST http://locallhost:8000/api/register/ HTTP/1.1
+content-type: application/json
+
+{
+  "username": "your_username",
+  "password": "your_strong_password",
+  "email": "your_email@example.com",
+  "is_parceiro": false,
+  "detalhes": {
+    "parceiroFullname": "",
+    "parceiroEmail": "",
+    "nome": "Your Full Name",
+    "estado_civil": "Your marital status",
+    "rg_numero": "Your RG number",
+    "rg_orgexp": "Your RG issuing organ",
+    "rg_dataemissao": "2024-04-01",
+    "cpf": "44466655588",
+    "datanasc": "2024-04-01",
+    "celular": "4499875648",
+    "renda": 1234.56,
+    "mae": "Your mother's name",
+    "pai": "Your father's name",
+    "nacionalidade": "Your nationality",
+    "classe_profissional": "Your professional class",
+    "profissao": "Your profession",
+    "valor_patrimonio": 98765.43,
+    "pep": false,
+    "fatca": false,
+    "telefones_adicionais": "Optional: Additional phone numbers",
+    "nome_referencia": "Optional: Reference name",
+    "telefone_referencia": "4499875648",
+    "residencia_estado": "Your state of residence",
+    "residencial_cidade": "Your city of residence"
+  }
+}
+
+

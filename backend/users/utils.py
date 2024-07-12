@@ -6,7 +6,8 @@ ses_client = boto3.client('ses', region_name=AWS_REGION)
 
 def send_admin_notification(user):
     SENDER = 'info@rbxrobotica.com.br'
-    RECIPIENT = 'cromofinanciamentos@gmail.com'
+    RECIPIENT = 'ldamasio@gmail.com'
+    # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
     BODY_TEXT = f'Um novo usuário foi registrado: {user.username} ({user.email})'
     BODY_HTML = f"""<html>
@@ -19,8 +20,8 @@ def send_admin_notification(user):
     """
     CHARSET = 'UTF-8'
 
-    print('Tentando enviar o seguinte email:')
-    print(BODY_HTML)
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"passou pelo utils {BODY_HTML}\n")
 
     try:
         response = ses_client.send_email(
@@ -47,10 +48,16 @@ def send_admin_notification(user):
             },
             Source=SENDER,
         )
-        print("Email enviado! Message ID:", response['MessageId'])
+        with open('superdebug.log', "a") as arquivo:
+            arquivo.write(f"Email enviado! Message ID: {response['MessageId']}\n")
     except NoCredentialsError:
-        print("Credenciais não encontradas.")
+        with open('superdebug.log', "a") as arquivo:
+            arquivo.write(f"Credenciais não encontradas.\n")
     except PartialCredentialsError:
-        print("Credenciais incompletas.")
+        with open('superdebug.log', "a") as arquivo:
+            arquivo.write(f"Credenciais incompletas.\n")
     except Exception as e:
-        print("Erro ao enviar email:", str(e))
+        with open('superdebug.log', "a") as arquivo:
+            arquivo.write(f"Erro ao enviar email: {str(e)}\n")
+
+

@@ -6,3 +6,5 @@
 **/.http
 **/venv
 **/build
+**/*.log
+**/*.http

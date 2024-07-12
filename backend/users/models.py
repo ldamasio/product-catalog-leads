@@ -6,8 +6,8 @@ class CustomUser(AbstractUser):
 
 class Detalhes(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    parceiroFullname = models.CharField(max_length=255)
-    parceiroEmail = models.CharField(max_length=255)
+    parceiroFullname = models.CharField(max_length=255, blank=True)
+    parceiroEmail = models.CharField(max_length=255, blank=True)
     nome = models.CharField(max_length=255)
     estado_civil = models.CharField(max_length=100)
     rg_numero = models.CharField(max_length=20)
