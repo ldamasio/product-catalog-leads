@@ -103,9 +103,8 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://cromofinanciamentos.com.br",
+    "https://www.cromofinanciamentos.com.br",
 ]
-
 
 CORS_ALLOW_CREDENTIALS = True
 
