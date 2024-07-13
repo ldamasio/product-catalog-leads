@@ -12,7 +12,6 @@ class Detalhes(models.Model):
     estado_civil = models.CharField(max_length=100)
     rg_numero = models.CharField(max_length=20)
     rg_orgexp = models.CharField(max_length=50)
-    rg_dataemissao = models.DateField()
     cpf = models.CharField(max_length=14)
     datanasc = models.DateField()
     celular = models.CharField(max_length=15)
@@ -20,6 +19,8 @@ class Detalhes(models.Model):
     mae = models.CharField(max_length=255)
     pai = models.CharField(max_length=255)
     nacionalidade = models.CharField(max_length=100)
+    residencia_estado = models.CharField(max_length=100)
+    residencial_cidade = models.CharField(max_length=100)
     classe_profissional = models.CharField(max_length=100)
     profissao = models.CharField(max_length=100)
     valor_patrimonio = models.DecimalField(max_digits=15, decimal_places=2)
@@ -28,8 +29,6 @@ class Detalhes(models.Model):
     telefones_adicionais = models.TextField(blank=True)
     nome_referencia = models.CharField(max_length=255)
     telefone_referencia = models.CharField(max_length=15)
-    residencia_estado = models.CharField(max_length=100)
-    residencial_cidade = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.nome} - {self.user.username}"

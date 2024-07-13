@@ -1,11 +1,47 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useFormContext } from '@/context/FormContext';
 import { useRouter } from 'next/navigation';
 
+interface PostBody {
+  username: string;
+  email: string;
+  password: string;
+  is_parceiro: boolean;
+  detalhes: {
+    parceiroFullname: string;
+    parceiroEmail: string;
+    nome: string;
+    datanasc: string;
+    estado_civil: string;
+    rg_numero: string;
+    rg_orgexp: string;
+    cpf: string;
+    celular: string;
+    renda: number;
+    mae: string;
+    pai: string;
+    nacionalidade: string;
+    classe_profissional: string;
+    profissao: string;
+    valor_patrimonio: number;
+    pep: boolean;
+    fatca: boolean;
+    telefones_adicionais: string[];
+    nome_referencia: string;
+    telefone_referencia: string;
+    residencia_estado: string;
+    residencial_cidade: string;
+  };
+}
+
 const PassoQuatro = () => {
-  const { formState, setFormState } = useFormContext();
+
   const router = useRouter();
+
+  const { formState, setFormState } = useFormContext();
 
   const handleCheckboxClick = () => {
     setFormState((prevState) => ({
@@ -14,10 +50,62 @@ const PassoQuatro = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formState);
-    console.log(formState);
-    router.push('/obrigado');
+  const handleSubmit = async () => {
+
+    const postBody: PostBody = { 
+      username: formState.email,
+      email: formState.email,
+      password: 'default',
+      is_parceiro: formState.isParceiro,
+      detalhes: {
+        parceiroFullname: formState.parceiroFullname,
+        parceiroEmail: formState.parceiroEmail,
+        nome: formState.fullname,
+        datanasc: formState.dataNasc,
+        estado_civil: formState.estadoCivil,
+        rg_numero: formState.rgNumero,
+        rg_orgexp: formState.rgOrgexp,
+        cpf: formState.cpf,
+        celular: formState.celular,
+        renda: formState.renda,
+        mae: formState.mae,
+        pai: formState.pai,
+        nacionalidade: formState.nacionalidade,
+        residencia_estado: formState.residenciaEstado,
+        residencial_cidade: formState.residenciaCidade,
+        classe_profissional: formState.classeProfissional,
+        profissao: formState.profissao,
+        valor_patrimonio: formState.valorPatrimonio,
+        pep: formState.pep,
+        fatca: formState.fatca,
+        telefones_adicionais: formState.telefonesAdicionais,
+        nome_referencia: formState.nomeReferencia,
+        telefone_referencia: formState.telefoneReferencia,
+      }      
+    };
+
+    try {
+      const response = await axios.post(
+        'http://localhost:8000/api/register/',
+        postBody,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        console.log('Form submitted successfully:', response.data);
+        router.push('/obrigado');
+      } else {
+        console.error('Error submitting form:', response);
+        // Display error message to the user (optional)
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Display error message to the user (optional)
+    }
   };
 
   const handleBack = () => {
@@ -57,10 +145,9 @@ const PassoQuatro = () => {
           <div className='formulario-button-prev'>
             <button onClick={handleBack}>Voltar</button>
           </div>
-          <div 
-            className={`formulario-button-next formulario-button-submit ${
-              formState.isChecked ? 'enabled' : ''
-            }`}
+          <div
+            className={`formulario-button-next formulario-button-submit ${formState.isChecked ? 'enabled' : ''
+              }`}
           >
             <button disabled={!formState.isChecked} onClick={handleSubmit}>
               Enviar agora
