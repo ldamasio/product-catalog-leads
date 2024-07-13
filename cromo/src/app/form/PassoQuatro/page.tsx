@@ -86,7 +86,7 @@ const PassoQuatro = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/register/',
+        'https://backend.cromofinanciamentos.com.br/api/register/',
         postBody,
         {
           headers: {
