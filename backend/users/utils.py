@@ -17,8 +17,8 @@ def send_admin_notification(user):
         arquivo.write(f"Testei o id: {user.id}\n")
 
     SENDER = 'info@rbxrobotica.com.br'
-    RECIPIENT = 'ldamasio@gmail.com'
-    # RECIPIENT = 'cromofinanciamentos@gmail.com'
+    # RECIPIENT = 'ldamasio@gmail.com'
+    RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
     dbuser = CustomUser.objects.get(username=user.username)
