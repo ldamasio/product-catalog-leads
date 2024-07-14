@@ -5,14 +5,35 @@ from .models import CustomUser, Detalhes
 AWS_REGION = 'us-east-2'
 ses_client = boto3.client('ses', region_name=AWS_REGION)
 
+with open('superdebug.log', "a") as arquivo:
+    arquivo.write("Entrei no utils.py\n")
+
 def send_admin_notification(user):
+
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Peguei o user: {user}\n")
+
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Testei o id: {user.id}\n")
+
     SENDER = 'info@rbxrobotica.com.br'
     RECIPIENT = 'ldamasio@gmail.com'
     # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
     dbuser = CustomUser.objects.get(username=user.username)
+
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Peguei o dbuser: {dbuser}\n")
+
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Testei o id do dbuser: {dbuser.id}\n")
+
     details = Detalhes.objects.get(user=dbuser.id)
+
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Testei o details: {details}\n")
+
 
     BODY_TEXT = f'Um novo usuário foi registrado: {user.username} ({user.email})'
     BODY_HTML = f"""<html>
