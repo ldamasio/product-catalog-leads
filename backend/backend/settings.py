@@ -114,6 +114,6 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
-   "https:/www.cromofinanciamentos.com.br",
-   "https:/cromofinanciamentos.com.br",
+   "https://www.cromofinanciamentos.com.br",
+   "https://cromofinanciamentos.com.br",
 ]
