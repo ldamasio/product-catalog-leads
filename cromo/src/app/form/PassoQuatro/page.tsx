@@ -1,6 +1,6 @@
 'use client';
 
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useFormContext } from '@/context/FormContext';
 import { useRouter } from 'next/navigation';
 
@@ -94,6 +94,8 @@ const PassoQuatro = () => {
         }
       );
 
+      console.log('User registered successfully:', response.data);
+      
       if (response.status === 200) {
         console.log('Form submitted successfully:', response.data);
         router.push('/obrigado');
@@ -102,8 +104,19 @@ const PassoQuatro = () => {
         // Display error message to the user (optional)
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      // Display error message to the user (optional)
+      if (axios.isAxiosError(error)) {
+        // Log the detailed validation errors from the server
+        console.error('Validation errors:', error.response?.data);
+        console.error('Error status:', error.response?.status);
+        console.error('Error headers:', error.response?.headers);
+      } else if (error instanceof Error) {
+        // Log other errors
+        console.error('Error message:', error.message);
+      } else {
+        // Log unknown errors
+        console.error('Unknown error:', error);
+      }
+      console.error('Error config:', error);
     }
   };
 
