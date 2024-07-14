@@ -40,5 +40,13 @@ class RegisterSerializer(serializers.ModelSerializer):
             email=validated_data['email'],
             is_parceiro=validated_data['is_parceiro']
         )
-        Detalhes.objects.create(user=user, **detalhes_data)
+
+        try:
+            Detalhes.objects.create(user=user, **detalhes_data)
+            with open('superdebug.log', "a") as arquivo:
+                arquivo.write(f"Testei o metodo create da classe RegisterSerializer: {user.username}\n")
+        except Exception as e:
+            with open('superdebug.log', "a") as arquivo:
+                arquivo.write(f"Erro ao criar detalhes para o usuário {user.username}: {e}")
+                
         return user
