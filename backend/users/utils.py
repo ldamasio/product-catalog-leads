@@ -1,5 +1,6 @@
 import boto3
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
+from .models import CustomUser, Detalhes
 
 AWS_REGION = 'us-east-2'
 ses_client = boto3.client('ses', region_name=AWS_REGION)
@@ -10,11 +11,8 @@ def send_admin_notification(user):
     # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
-    try:
-        from .models import Detalhes
-        details = user.detalhes
-    except (ImportError, Detalhes.DoesNotExist):
-        details = None
+    dbuser = CustomUser.objects.get(username=user.username)
+    details = dbuser.detalhes
 
     BODY_TEXT = f'Um novo usuário foi registrado: {user.username} ({user.email})'
     BODY_HTML = f"""<html>
