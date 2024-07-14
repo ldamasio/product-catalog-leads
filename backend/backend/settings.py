@@ -66,8 +66,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
 
@@ -104,8 +108,12 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.cromofinanciamentos.com.br",
+    "https://cromofinanciamentos.com.br",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-
+CSRF_TRUSTED_ORIGINS = [
+   "https:/www.cromofinanciamentos.com.br",
+   "https:/cromofinanciamentos.com.br",
+]
