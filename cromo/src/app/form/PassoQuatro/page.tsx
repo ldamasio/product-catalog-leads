@@ -96,7 +96,7 @@ const PassoQuatro = () => {
 
       console.log('User registered successfully:', response.data);
       
-      if (response.status === 201) {
+      if (response.status === 201 || response.status === 200) {
         console.log('Form submitted successfully:', response.data);
         router.push('/obrigado');
       } else {
