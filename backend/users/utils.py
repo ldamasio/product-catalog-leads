@@ -29,10 +29,10 @@ def send_admin_notification(user):
     with open('superdebug.log', "a") as arquivo:
         arquivo.write(f"Testei o id do dbuser: {dbuser.id}\n")
 
-    # details = Detalhes.objects.get(user=dbuser.id)
+    details = Detalhes.objects.get(user=dbuser.id)
 
-    # with open('superdebug.log', "a") as arquivo:
-    #     arquivo.write(f"Testei o details: {details}\n")
+    with open('superdebug.log', "a") as arquivo:
+        arquivo.write(f"Testei o details: {details}\n")
 
 
     BODY_TEXT = f'Um novo usuário foi registrado: {user.username} ({user.email})'
