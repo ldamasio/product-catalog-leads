@@ -11,7 +11,8 @@ def send_admin_notification(user):
     # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
-    details = Detalhes.objects.get(user)
+    dbuser = CustomUser.objects.get(username=user.username)
+    details = Detalhes.objects.get(dbuser)
 
     BODY_TEXT = f'Um novo usuário foi registrado: {user.username} ({user.email})'
     BODY_HTML = f"""<html>
