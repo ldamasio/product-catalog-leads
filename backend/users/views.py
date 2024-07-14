@@ -13,11 +13,6 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
-    def perform_create(self, serializer):
-        user = serializer.save()
-        with open('superdebug.log', "a") as arquivo:
-            arquivo.write(f"String salva com sucesso no arquivo {user}\n")
-
 class CustomTokenObtainPairView(TokenObtainPairView):
     pass
 
