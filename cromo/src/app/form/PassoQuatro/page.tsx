@@ -3,6 +3,7 @@
 import axios, { AxiosError } from 'axios';
 import { useFormContext } from '@/context/FormContext';
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 interface PostBody {
   username: string;
@@ -39,9 +40,9 @@ interface PostBody {
 const PassoQuatro = () => {
 
   const router = useRouter();
-
   const { formState, setFormState } = useFormContext();
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
   const handleCheckboxClick = () => {
     setFormState((prevState) => ({
       ...prevState,
@@ -98,7 +99,8 @@ const PassoQuatro = () => {
       
       if (response.status === 201 || response.status === 200) {
         console.log('Form submitted successfully:', response.data);
-        router.push('/obrigado');
+        // router.push('/obrigado');
+        setIsSubmitted(true);
       } else {
         console.error('Error submitting form:', response);
         // Display error message to the user (optional)
@@ -119,6 +121,12 @@ const PassoQuatro = () => {
       console.error('Error config:', error);
     }
   };
+
+  useEffect(() => {
+    if (isSubmitted) {
+      router.push('/obrigado');
+    }
+  }, [isSubmitted, router]);
 
   const handleBack = () => {
     router.push('/form/PassoTres');
