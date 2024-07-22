@@ -109,7 +109,6 @@ const PassoUm: React.FC = () => {
             type='date'
             id="dataNasc"
             name="dataNasc"
-            placeholder="Data de Nascimento"
             value={formState.dataNasc}
             onChange={handleChange}
             required
@@ -124,6 +123,7 @@ const PassoUm: React.FC = () => {
             onChange={handleChange}
             required
           >
+            <option value="">Selecione o estado civil</option>
             <option value='solteiro'>Solteiro</option>
             <option value='casado'>Casado</option>
             <option value='divorciado'>Divorciado</option>
