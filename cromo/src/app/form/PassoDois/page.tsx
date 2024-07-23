@@ -170,7 +170,7 @@ const PassoDois = () => {
 
         <span className='checkbox-container'>
           <div className='checkbox-text' onClick={handleCheckboxClickFatca}>
-            FATCA (Foreign Account Tax Compliance Act):
+            FATCA (Lei de Conformidade Fiscal de Contas Estrangeiras):
           </div>
           <div className='checkbox-container-input-div'>
             <input

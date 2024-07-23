@@ -273,6 +273,7 @@ main{
   padding: 1em;
   min-height: 40vh;
   background-color: black;
+  color: white;
 }
 
 @media (min-width: 768px) {
