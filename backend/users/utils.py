@@ -17,8 +17,8 @@ def send_admin_notification(user):
         arquivo.write(f"Testei o id: {user.id}\n")
 
     SENDER = 'info@rbxrobotica.com.br'
-    RECIPIENT = 'ldamasio@gmail.com'
-    # RECIPIENT = 'cromofinanciamentos@gmail.com'
+    # RECIPIENT = 'ldamasio@gmail.com'
+    RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
     dbuser = CustomUser.objects.get(username=user.username)
@@ -46,13 +46,13 @@ def send_admin_notification(user):
         <li><b>Nome Completo:</b> {user.first_name} {user.last_name}</li>
         <li><b>Username:</b> {user.username}</li>
         <li><b>Email:</b> {user.email}</li>
-        <li><b>Parceiro:</b> {user.is_parceiro}</li>
+        <li><b>Parceiro:</b> {'Sim' if user.is_parceiro else 'Não'}</li>
       </ul>
       <h2>Dados Pessoais</h2>
       <ul>
         <li><b>Nome Completo:</b> {details.nome}</li>
         <li><b>Estado Civil:</b> {details.estado_civil}</li>
-        <li><b>RG:</b> {details.rg_numero} ({details.rg_orgexp} - se preenchido)</li>
+        <li><b>RG:</b> {details.rg_numero} ({details.rg_orgexp}</li>
         <li><b>CPF:</b> {details.cpf}</li>
         <li><b>Data de Nascimento:</b> {details.datanasc.strftime('%d/%m/%Y') if details.datanasc else 'Não informado'}</li>
         <li><b>Celular:</b> {details.celular}</li>
@@ -65,13 +65,13 @@ def send_admin_notification(user):
         <li><b>Classe Profissional:</b> {details.classe_profissional}</li>
         <li><b>Profissão:</b> {details.profissao}</li>
         <li><b>Valor Patrimonial:</b> {details.valor_patrimonio:.2f}</li>
-        <li><b>PEP:</b> {details.pep}</li>
-        <li><b>FATCA:</b> {details.fatca}</li>
+        <li><b>PEP:</b> {'Sim' if details.pep else 'Não'}</li>
+        <li><b>FATCA:</b> {'Sim' if details.fatca else 'Não'}</li>
         <li><b>Telefones Adicionais:</b> {details.telefones_adicionais}</li>
         <li><b>Telefones Comercial:</b> {details.telefone_comercial}</li>
         <li><b>Nome da Referência:</b> {details.nome_referencia}</li>
         <li><b>Telefone da Referência:</b> {details.telefone_referencia}</li>
-        <li><b>É autônomo:</b> {details.is_autonomo}</li>
+        <li><b>É autônomo:</b> {'Sim' if details.is_autonomo else 'Não'}</li>
         <li><b>Nome da Referência Comercial:</b> {details.nome_referencia_comercial}</li>
         <li><b>Telefone da Referência Comercial:</b> {details.telefone_referencia_comercial}</li>
         <li><b>Marca do Veículo:</b> {details.marca_veiculo}</li>
