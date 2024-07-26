@@ -27,8 +27,16 @@ interface FormState {
   pep: boolean;
   fatca: boolean;
   telefonesAdicionais: string[];
+  telefoneComercial: string;
   nomeReferencia: string;
   telefoneReferencia: string;
+  isAutonomo: boolean;
+  nomeReferenciaComercial: string;
+  telefoneReferenciaComercial: string;
+  marcaVeiculo: string;
+  modeloVeiculo: string;
+  anoFabricacaoVeiculo: string;
+  placaVeiculo: string;
   isChecked: boolean;
 }
 
@@ -65,8 +73,16 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     pep: false,
     fatca: false,
     telefonesAdicionais: [],
+    telefoneComercial: '',
     nomeReferencia: '',
     telefoneReferencia: '',
+    isAutonomo: false,
+    nomeReferenciaComercial: '',
+    telefoneReferenciaComercial: '',
+    marcaVeiculo: '',
+    modeloVeiculo: '',
+    anoFabricacaoVeiculo: '',
+    placaVeiculo: '',
     isChecked: false,
   });
 

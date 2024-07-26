@@ -12,6 +12,13 @@ const PassoTres = () => {
     setFormState(prevState => ({ ...prevState, [name]: value }));
   };
 
+  const handleCheckboxClickAutonomo= () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      isAutonomo: !prevState.isAutonomo,
+    }));
+  };
+
   const handleNext = () => {
     router.push('/form/PassoQuatro');
   };
@@ -23,7 +30,19 @@ const PassoTres = () => {
   return (
     <div className='formulario'>
       <div className='formulario-container'>
-        <h1>Passo 3: Detalhes Pessoais</h1>
+        <h1>Passo 3: Detalhes Pessoais e Observações Gerais</h1>
+        <label htmlFor="telefoneReferencia">
+          Telefone Comercial:
+          <input
+            id="telefoneComercial"
+            name="telefoneComercial"
+            placeholder="(XX) X XXXX-XXXX"
+            type="tel"
+            value={formState.telefoneComercial}
+            onChange={handleChange}
+            required
+          />
+        </label>
         <label htmlFor="nomeReferencia">
           Nome da Referência:
           <input
@@ -43,6 +62,91 @@ const PassoTres = () => {
             placeholder="(XX) X XXXX-XXXX"
             type="tel"
             value={formState.telefoneReferencia}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <span className='checkbox-container'>
+            <div className='checkbox-text' onClick={handleCheckboxClickAutonomo}>
+              Sou autônomo:
+            </div>
+            <div className='checkbox-container-input-div'>
+              <input
+                className='checkbox-container-input'
+                type="checkbox"
+                checked={formState.isAutonomo}
+                onChange={handleCheckboxClickAutonomo}
+                required
+              />
+            </div>
+          </span>
+        <label htmlFor="nomeReferenciaComercial">
+          Nome da Referência Comercial:
+          <input
+            id="nomeReferenciaComercial"
+            name="nomeReferenciaComercial"
+            type="text"
+            value={formState.nomeReferenciaComercial}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="telefoneReferenciaComercial">
+          Telefone da Referência Comercial:
+          <input
+            id="telefoneReferenciaComercial"
+            name="telefoneReferenciaComercial"
+            placeholder="(XX) X XXXX-XXXX"
+            type="tel"
+            value={formState.telefoneReferenciaComercial}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="marcaVeiculo">
+          Marca do Veículo:
+          <input
+            id="marcaVeiculo"
+            name="marcaVeiculo"
+            placeholder=""
+            type="text"
+            value={formState.marcaVeiculo}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="modeloVeiculo">
+          Modelo do Veículo:
+          <input
+            id="modeloVeiculo"
+            name="modeloVeiculo"
+            placeholder=""
+            type="text"
+            value={formState.modeloVeiculo}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="anoFabricacaoVeiculo">
+          Ano de Fabricação do Veículo:
+          <input
+            id="anoFabricacaoVeiculo"
+            name="anoFabricacaoVeiculo"
+            placeholder=""
+            type="text"
+            value={formState.anoFabricacaoVeiculo}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="placaVeiculo">
+          Placa do Veículo:
+          <input
+            id="placaVeiculo"
+            name="placaVeiculo"
+            placeholder=""
+            type="text"
+            value={formState.placaVeiculo}
             onChange={handleChange}
             required
           />

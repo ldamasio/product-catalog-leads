@@ -24,16 +24,24 @@ interface PostBody {
     mae: string;
     pai: string;
     nacionalidade: string;
+    residencia_estado: string;
+    residencial_cidade: string;
     classe_profissional: string;
     profissao: string;
     valor_patrimonio: number;
     pep: boolean;
     fatca: boolean;
     telefones_adicionais: string[];
+    telefone_comercial: string;
     nome_referencia: string;
     telefone_referencia: string;
-    residencia_estado: string;
-    residencial_cidade: string;
+    autonomo: boolean;
+    nome_referencia_comercial: string;
+    telefone_referencia_comercial: string;
+    marca_veiculo: string;
+    modelo_veiculo: string;
+    ano_fabricacao_veiculo: string;
+    placa_veiculo: string;
   };
 }
 
@@ -79,11 +87,21 @@ const PassoQuatro = () => {
         pep: formState.pep,
         fatca: formState.fatca,
         telefones_adicionais: formState.telefonesAdicionais,
+        telefone_comercial: formState.telefoneComercial,
         nome_referencia: formState.nomeReferencia,
         telefone_referencia: formState.telefoneReferencia,
+        autonomo: formState.isAutonomo,
+        nome_referencia_comercial: formState.nomeReferenciaComercial,
+        telefone_referencia_comercial: formState.telefoneReferenciaComercial,
+        marca_veiculo: formState.marcaVeiculo,
+        modelo_veiculo: formState.modeloVeiculo,
+        ano_fabricacao_veiculo: formState.anoFabricacaoVeiculo,
+        placa_veiculo: formState.placaVeiculo
       }      
     };
 
+    console.log('User registered successfully:', postBody);
+    
     try {
       const response = await axios.post(
         'https://backend.cromofinanciamentos.com.br/api/register/',

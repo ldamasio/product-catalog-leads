@@ -17,8 +17,8 @@ def send_admin_notification(user):
         arquivo.write(f"Testei o id: {user.id}\n")
 
     SENDER = 'info@rbxrobotica.com.br'
-    # RECIPIENT = 'ldamasio@gmail.com'
-    RECIPIENT = 'cromofinanciamentos@gmail.com'
+    RECIPIENT = 'ldamasio@gmail.com'
+    # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
     dbuser = CustomUser.objects.get(username=user.username)
@@ -43,7 +43,7 @@ def send_admin_notification(user):
       <p>Um novo usuário foi registrado: {user.username} ({user.email})</p>
       <h2>Dados do Usuário</h2>
       <ul>
-        <li><b>Nome Completo:</b> {user.first_name} {user.last_name} (se preenchido)</li>
+        <li><b>Nome Completo:</b> {user.first_name} {user.last_name}</li>
         <li><b>Username:</b> {user.username}</li>
         <li><b>Email:</b> {user.email}</li>
         <li><b>Parceiro:</b> {user.is_parceiro}</li>
@@ -51,25 +51,33 @@ def send_admin_notification(user):
       <h2>Dados Pessoais</h2>
       <ul>
         <li><b>Nome Completo:</b> {details.nome}</li>
-        <li><b>Estado Civil:</b> {details.estado_civil} (se preenchido)</li>
+        <li><b>Estado Civil:</b> {details.estado_civil}</li>
         <li><b>RG:</b> {details.rg_numero} ({details.rg_orgexp} - se preenchido)</li>
         <li><b>CPF:</b> {details.cpf}</li>
         <li><b>Data de Nascimento:</b> {details.datanasc.strftime('%d/%m/%Y') if details.datanasc else 'Não informado'}</li>
         <li><b>Celular:</b> {details.celular}</li>
-        <li><b>Renda:</b> {details.renda:.2f} (se preenchido)</li>
-        <li><b>Nome da Mãe:</b> {details.mae} (se preenchido)</li>
-        <li><b>Nome do Pai:</b> {details.pai} (se preenchido)</li>
-        <li><b>Nacionalidade:</b> {details.nacionalidade} (se preenchido)</li>
-        <li><b>Estado de Residência:</b> {details.residencia_estado} (se preenchido)</li>
-        <li><b>Cidade de Residência:</b> {details.residencial_cidade} (se preenchido)</li>
-        <li><b>Classe Profissional:</b> {details.classe_profissional} (se preenchido)</li>
-        <li><b>Profissão:</b> {details.profissao} (se preenchido)</li>
-        <li><b>Valor Patrimonial:</b> {details.valor_patrimonio:.2f} (se preenchido)</li>
+        <li><b>Renda:</b> {details.renda:.2f}</li>
+        <li><b>Nome da Mãe:</b> {details.mae}</li>
+        <li><b>Nome do Pai:</b> {details.pai}</li>
+        <li><b>Nacionalidade:</b> {details.nacionalidade}</li>
+        <li><b>Estado de Residência:</b> {details.residencia_estado}</li>
+        <li><b>Cidade de Residência:</b> {details.residencial_cidade}</li>
+        <li><b>Classe Profissional:</b> {details.classe_profissional}</li>
+        <li><b>Profissão:</b> {details.profissao}</li>
+        <li><b>Valor Patrimonial:</b> {details.valor_patrimonio:.2f}</li>
         <li><b>PEP:</b> {details.pep}</li>
         <li><b>FATCA:</b> {details.fatca}</li>
-        <li><b>Telefones Adicionais:</b> {details.telefones_adicionais} (se preenchido)</li>
-        <li><b>Nome da Referência:</b> {details.nome_referencia} (se preenchido)</li>
-        <li><b>Telefone da Referência:</b> {details.telefone_referencia} (se preenchido)</li>
+        <li><b>Telefones Adicionais:</b> {details.telefones_adicionais}</li>
+        <li><b>Telefones Comercial:</b> {details.telefone_comercial}</li>
+        <li><b>Nome da Referência:</b> {details.nome_referencia}</li>
+        <li><b>Telefone da Referência:</b> {details.telefone_referencia}</li>
+        <li><b>É autônomo:</b> {details.is_autonomo}</li>
+        <li><b>Nome da Referência Comercial:</b> {details.nome_referencia_comercial}</li>
+        <li><b>Telefone da Referência Comercial:</b> {details.telefone_referencia_comercial}</li>
+        <li><b>Marca do Veículo:</b> {details.marca_veiculo}</li>
+        <li><b>Modelo do Veículo:</b> {details.modelo_veiculo}</li>
+        <li><b>Ano de Fabricação do Veículo:</b> {details.ano_fabricacao_veiculo}</li>
+        <li><b>Placa do Veículo:</b> {details.placa_veiculo}</li>
       </ul>
     </body>
     </html>

@@ -13,8 +13,11 @@ class DetalhesSerializer(serializers.ModelSerializer):
             'cpf', 'celular', 'renda', 'mae', 'pai', 
             'nacionalidade', 'residencia_estado', 'residencial_cidade', 
             'classe_profissional', 'profissao', 'valor_patrimonio', 
-            'pep', 'fatca', 'telefones_adicionais', 
-            'nome_referencia', 'telefone_referencia',
+            'pep', 'fatca', 'telefones_adicionais', 'telefone_comercial', 
+            'nome_referencia', 'telefone_referencia', 'is_autonomo', 
+            'nome_referencia_comercial', 'telefone_referencia_comercial', 
+            'marca_veiculo', 'modelo_veiculo', 'ano_fabricacao_veiculo', 
+            'placa_veiculo', 
         ]
 
 class UserSerializer(serializers.ModelSerializer):

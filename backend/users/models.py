@@ -28,8 +28,16 @@ class Detalhes(models.Model):
     pep = models.BooleanField(default=False)
     fatca = models.BooleanField(default=False)
     telefones_adicionais = models.TextField(blank=True)
-    nome_referencia = models.CharField(max_length=255)
-    telefone_referencia = models.CharField(max_length=15)
+    telefone_comercial = models.CharField(max_length=15, blank=True)
+    nome_referencia = models.CharField(max_length=255, blank=True)
+    telefone_referencia = models.CharField(max_length=15, blank=True)
+    is_autonomo = models.BooleanField(default=False)
+    nome_referencia_comercial = models.CharField(max_length=255, blank=True)
+    telefone_referencia_comercial = models.CharField(max_length=15, blank=True)
+    marca_veiculo = models.CharField(max_length=255, blank=True)
+    modelo_veiculo = models.CharField(max_length=255, blank=True)
+    ano_fabricacao_veiculo = models.CharField(max_length=15, blank=True)
+    placa_veiculo = models.CharField(max_length=15, blank=True)
 
     def __str__(self):
         return f"{self.nome} - {self.user.username}"
