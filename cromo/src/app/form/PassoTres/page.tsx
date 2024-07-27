@@ -104,7 +104,7 @@ const PassoTres = () => {
           />
         </label>
         <label htmlFor="valorFinanciamento">
-          Renda:
+          Valor do Financiamento:
           <input
             type='number'
             id="valorFinanciamento"

@@ -8,7 +8,7 @@ class DetalhesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Detalhes
         fields = [
-            'parceiroFullname', 'parceiroEmail', 'parceiroCpfCnpj',
+            'parceiro_fullname', 'parceiro_email', 'parceiro_cpf_cnpj',
             'nome', 'datanasc', 'estado_civil', 'rg_numero', 'rg_orgexp', 
             'cpf', 'celular', 'renda', 'mae', 'pai', 
             'nacionalidade', 'residencia_estado', 'residencial_cidade', 
