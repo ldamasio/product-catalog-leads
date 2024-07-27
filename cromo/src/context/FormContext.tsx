@@ -7,6 +7,7 @@ interface FormState {
   isParceiroTyping: boolean;
   parceiroFullname: string;
   parceiroEmail: string;
+  parceiroCpfCnpj: string;
   fullname: string;
   email: string;
   dataNasc: string;
@@ -33,6 +34,7 @@ interface FormState {
   isAutonomo: boolean;
   nomeReferenciaComercial: string;
   telefoneReferenciaComercial: string;
+  valorFinanciamento: number;
   marcaVeiculo: string;
   modeloVeiculo: string;
   anoFabricacaoVeiculo: string;
@@ -53,6 +55,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     isParceiroTyping: false,
     parceiroFullname: '',
     parceiroEmail: '',
+    parceiroCpfCnpj: '',
     fullname: '',
     email: '',
     dataNasc: '',
@@ -79,6 +82,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     isAutonomo: false,
     nomeReferenciaComercial: '',
     telefoneReferenciaComercial: '',
+    valorFinanciamento: 0,
     marcaVeiculo: '',
     modeloVeiculo: '',
     anoFabricacaoVeiculo: '',

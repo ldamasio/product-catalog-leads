@@ -13,6 +13,7 @@ interface PostBody {
   detalhes: {
     parceiroFullname: string;
     parceiroEmail: string;
+    parceiroCpfCnpj: string;
     nome: string;
     datanasc: string;
     estado_civil: string;
@@ -38,6 +39,7 @@ interface PostBody {
     autonomo: boolean;
     nome_referencia_comercial: string;
     telefone_referencia_comercial: string;
+    valor_financiamento: number;
     marca_veiculo: string;
     modelo_veiculo: string;
     ano_fabricacao_veiculo: string;
@@ -68,6 +70,7 @@ const PassoQuatro = () => {
       detalhes: {
         parceiroFullname: formState.parceiroFullname,
         parceiroEmail: formState.parceiroEmail,
+        parceiroCpfCnpj: formState.parceiroCpfCnpj,
         nome: formState.fullname,
         datanasc: formState.dataNasc,
         estado_civil: formState.estadoCivil,
@@ -93,6 +96,7 @@ const PassoQuatro = () => {
         autonomo: formState.isAutonomo,
         nome_referencia_comercial: formState.nomeReferenciaComercial,
         telefone_referencia_comercial: formState.telefoneReferenciaComercial,
+        valor_financiamento: formState.valorFinanciamento,
         marca_veiculo: formState.marcaVeiculo,
         modelo_veiculo: formState.modeloVeiculo,
         ano_fabricacao_veiculo: formState.anoFabricacaoVeiculo,

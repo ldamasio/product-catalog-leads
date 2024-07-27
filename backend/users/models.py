@@ -7,8 +7,9 @@ class CustomUser(AbstractUser):
 
 class Detalhes(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    parceiroFullname = models.CharField(max_length=255, blank=True)
-    parceiroEmail = models.CharField(max_length=255, blank=True)
+    parceiro_fullname = models.CharField(max_length=255, blank=True)
+    parceiro_email = models.CharField(max_length=255, blank=True)
+    parceiro_cpf_cnpj = models.CharField(max_length=255, blank=True)
     nome = models.CharField(max_length=255)
     estado_civil = models.CharField(max_length=100)
     rg_numero = models.CharField(max_length=20)
@@ -34,6 +35,7 @@ class Detalhes(models.Model):
     is_autonomo = models.BooleanField(default=False)
     nome_referencia_comercial = models.CharField(max_length=255, blank=True)
     telefone_referencia_comercial = models.CharField(max_length=15, blank=True)
+    valor_financiamento = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
     marca_veiculo = models.CharField(max_length=255, blank=True)
     modelo_veiculo = models.CharField(max_length=255, blank=True)
     ano_fabricacao_veiculo = models.CharField(max_length=15, blank=True)

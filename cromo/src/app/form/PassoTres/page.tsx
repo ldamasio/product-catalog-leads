@@ -103,6 +103,18 @@ const PassoTres = () => {
             required
           />
         </label>
+        <label htmlFor="valorFinanciamento">
+          Renda:
+          <input
+            type='number'
+            id="valorFinanciamento"
+            name="valorFinanciamento"
+            placeholder='0000,00'
+            value={formState.valorFinanciamento}
+            onChange={handleChange}
+            required
+          />
+        </label>
         <label htmlFor="marcaVeiculo">
           Marca do Veículo:
           <input

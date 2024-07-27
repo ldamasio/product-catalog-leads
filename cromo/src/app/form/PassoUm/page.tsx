@@ -50,7 +50,7 @@ const PassoUm: React.FC = () => {
         }
 
         {formState.isParceiroTyping &&
-          <label htmlFor="fullname">
+          <label htmlFor="parceiroFullname">
             Nome Completo do Parceiro:
             <input
               type="text"
@@ -64,7 +64,7 @@ const PassoUm: React.FC = () => {
         }
 
         {formState.isParceiroTyping &&
-          <label htmlFor="fullname">
+          <label htmlFor="parceiroEmail">
             E-mail do Parceiro:
             <input
               type="text"
@@ -72,6 +72,20 @@ const PassoUm: React.FC = () => {
               name="parceiroEmail"
               placeholder=""
               value={formState.parceiroEmail}
+              onChange={handleChange}
+            />
+          </label>
+        }
+
+        {formState.isParceiroTyping &&
+          <label htmlFor="parceiroCpfCnpj">
+            CPF ou CNPJ do Parceiro:
+            <input
+              type="text"
+              id="parceiroCpfCnpj"
+              name="parceiroCpfCnpj"
+              placeholder=""
+              value={formState.parceiroCpfCnpj}
               onChange={handleChange}
             />
           </label>

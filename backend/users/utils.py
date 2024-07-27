@@ -17,8 +17,8 @@ def send_admin_notification(user):
         arquivo.write(f"Testei o id: {user.id}\n")
 
     SENDER = 'info@rbxrobotica.com.br'
-    # RECIPIENT = 'ldamasio@gmail.com'
-    RECIPIENT = 'cromofinanciamentos@gmail.com'
+    RECIPIENT = 'ldamasio@gmail.com'
+    # RECIPIENT = 'cromofinanciamentos@gmail.com'
     SUBJECT = 'Novo Usuário Registrado'
 
     dbuser = CustomUser.objects.get(username=user.username)
@@ -50,6 +50,9 @@ def send_admin_notification(user):
       </ul>
       <h2>Dados Pessoais</h2>
       <ul>
+        <li><b>Nome do Parceiro:</b> {details.parceiroFullname}</li>
+        <li><b>Email do Parceiro:</b> {details.parceiroEmail}</li>
+        <li><b>Cpf ou CNPJ do Parceiro:</b> {details.parceiroCpfCnpj}</li>
         <li><b>Nome Completo:</b> {details.nome}</li>
         <li><b>Estado Civil:</b> {details.estado_civil}</li>
         <li><b>RG:</b> {details.rg_numero} ({details.rg_orgexp}</li>
@@ -74,6 +77,7 @@ def send_admin_notification(user):
         <li><b>É autônomo:</b> {'Sim' if details.is_autonomo else 'Não'}</li>
         <li><b>Nome da Referência Comercial:</b> {details.nome_referencia_comercial}</li>
         <li><b>Telefone da Referência Comercial:</b> {details.telefone_referencia_comercial}</li>
+        <li><b>Valor do Financiamento:</b> {details.valor_financiamento}</li>
         <li><b>Marca do Veículo:</b> {details.marca_veiculo}</li>
         <li><b>Modelo do Veículo:</b> {details.modelo_veiculo}</li>
         <li><b>Ano de Fabricação do Veículo:</b> {details.ano_fabricacao_veiculo}</li>

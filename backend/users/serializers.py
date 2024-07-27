@@ -8,16 +8,16 @@ class DetalhesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Detalhes
         fields = [
-            'parceiroFullname', 'parceiroEmail', 'nome', 
-            'datanasc', 'estado_civil', 'rg_numero', 'rg_orgexp', 
+            'parceiroFullname', 'parceiroEmail', 'parceiroCpfCnpj',
+            'nome', 'datanasc', 'estado_civil', 'rg_numero', 'rg_orgexp', 
             'cpf', 'celular', 'renda', 'mae', 'pai', 
             'nacionalidade', 'residencia_estado', 'residencial_cidade', 
             'classe_profissional', 'profissao', 'valor_patrimonio', 
             'pep', 'fatca', 'telefones_adicionais', 'telefone_comercial', 
             'nome_referencia', 'telefone_referencia', 'is_autonomo', 
             'nome_referencia_comercial', 'telefone_referencia_comercial', 
-            'marca_veiculo', 'modelo_veiculo', 'ano_fabricacao_veiculo', 
-            'placa_veiculo', 
+            'valor_financiamento', 'marca_veiculo', 'modelo_veiculo', 
+            'ano_fabricacao_veiculo', 'placa_veiculo', 
         ]
 
 class UserSerializer(serializers.ModelSerializer):
