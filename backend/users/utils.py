@@ -50,9 +50,9 @@ def send_admin_notification(user):
       </ul>
       <h2>Dados Pessoais</h2>
       <ul>
-        <li><b>Nome do Parceiro:</b> {details.parceiroFullname}</li>
-        <li><b>Email do Parceiro:</b> {details.parceiroEmail}</li>
-        <li><b>Cpf ou CNPJ do Parceiro:</b> {details.parceiroCpfCnpj}</li>
+        <li><b>Nome do Parceiro:</b> {details.parceiro_fullname}</li>
+        <li><b>Email do Parceiro:</b> {details.parceiro_email}</li>
+        <li><b>Cpf ou CNPJ do Parceiro:</b> {details.parceiro_cpf_cnpj}</li>
         <li><b>Nome Completo:</b> {details.nome}</li>
         <li><b>Estado Civil:</b> {details.estado_civil}</li>
         <li><b>RG:</b> {details.rg_numero} ({details.rg_orgexp}</li>
